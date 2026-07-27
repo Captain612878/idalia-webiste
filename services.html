@@ -8,7 +8,7 @@
   <style>
     :root { --cream:#f7efe4; --cream-2:#fcf6eb; --cream-3:#f3e4c8; --burgundy:#6f2434; --gold:#c79a2d; --gold-soft:#f2d68f; --gold-dark:#8e6b1e; --text:#3d2a22; --dark:#1c1512; --muted:#735b46; --light:#fffdfa; --white:#ffffff; --deep-navy:#0f2344; --accent:var(--burgundy); --gold-dim:var(--gold-dark); }
     *{box-sizing:border-box;margin:0;padding:0;} body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,var(--cream),var(--cream-2));color:var(--text);line-height:1.8;} a{text-decoration:none;color:inherit;}
-    .page{max-width:100%;margin:0 auto;padding:0 0 5rem;}
+    .page{max-width:100%;margin:0 auto;padding:0 0 3rem;}
     .page > .card,.page > .top,.page > .section-block{max-width:1000px;width:min(100%,1000px);margin-left:auto;margin-right:auto;padding-left:1.5rem;padding-right:1.5rem;}
     .eyebrow{color:var(--burgundy);text-transform:uppercase;letter-spacing:.25em;font-size:.75rem;font-weight:600;margin-bottom:1rem;}
     h1,h2{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--burgundy);} h1{font-size:clamp(2.2rem,4vw,3rem);margin-bottom:1rem;} h2{font-size:1.5rem;margin-bottom:.75rem;}
@@ -22,11 +22,6 @@
     .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;gap:1rem;max-width:1000px;width:min(100%,1000px);margin-left:auto;margin-right:auto;padding:0 1.5rem;}
     .top a{color:var(--gold);font-weight:600;}
     .btn{display:inline-block;margin-top:1.25rem;padding:.9rem 1.4rem;background:var(--burgundy);color:var(--cream);font-weight:600;border-radius:999px;}
-    .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:1.5rem;}
-    .step{text-align:center;padding:1rem;}
-    .step-num{width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;color:var(--gold);margin:0 auto 1rem;background:var(--cream-2);}
-    .step h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:.5rem;color:var(--dark);}
-    .step p{font-size:.9rem;line-height:1.7;}
     .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:1.5rem;}
     .service-card{background:var(--white);border:1px solid rgba(111,36,52,0.12);border-radius:12px;padding:1.5rem;transition:border-color .3s;}
     .service-card:hover{border-color:rgba(199,154,45,0.35);}
@@ -34,22 +29,70 @@
     .service-card h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;margin-bottom:.5rem;color:var(--burgundy);}
     .service-card p{font-size:.9rem;margin:0;line-height:1.7;}
 
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.9rem 4rem; min-height: 70px; display: flex; align-items: center; justify-content: space-between; background: var(--deep-navy); transition: background 0.4s ease, padding 0.4s ease; }
-    nav.scrolled { background: rgba(15,35,68,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(242,214,143,0.25); box-shadow: 0 8px 30px rgba(20,20,20,0.16); }
-    .logo { display: inline-flex; align-items: center; cursor: pointer; transition: transform 0.3s ease; }
+    /* ── NAV (matched to homepage) ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 0.9rem 4rem;
+      min-height: 70px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--deep-navy);
+      transition: background 0.4s ease, padding 0.4s ease;
+      gap: 1rem;
+    }
+    nav.scrolled {
+      background: rgba(15, 35, 68, 0.96);
+      backdrop-filter: blur(12px);
+      padding: 0.9rem 4rem;
+      min-height: 70px;
+      border-bottom: 1px solid rgba(242, 214, 143, 0.25);
+      box-shadow: 0 8px 30px rgba(20,20,20,0.16);
+    }
+    .logo {
+      display: inline-flex; align-items: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
     .logo:hover { transform: translateY(-2px); }
-    .logo img { height: 50px; width: auto; display: block; }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; align-items: center; }
-    .nav-links a { font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream-2); font-weight: 600; transition: color 0.3s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold-soft); }
+    .logo img { height: 50px; width: auto; display: block; transition: transform 0.3s ease, filter 0.3s ease; }
+    .logo:hover img {
+      filter: drop-shadow(0 0 10px rgba(242, 214, 143, 0.45)) brightness(1.08);
+      transform: scale(1.03);
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--cream-2); text-decoration: none; transition: color 0.3s;
+      position: relative; font-weight: 600;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0; right: 0; height: 1px;
+      background: var(--gold);
+      transform: scaleX(0); transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--gold-soft); }
+    .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+    .nav-links a.active, .nav-links .dropdown-toggle.active { color: var(--gold-soft); }
+    .nav-links a.active::after, .nav-links .dropdown-toggle.active::after { transform: scaleX(1); transform-origin: left; }
+
+    /* Desktop dropdown — click-only, no hover trigger */
     .nav-dropdown { position: relative; }
     .dropdown-toggle { display: inline-flex; align-items: center; gap: 0.35rem; }
-    .dropdown-icon { font-size: 0.75rem; color: var(--accent); transition: transform 0.25s ease; }
-    .nav-dropdown.open .dropdown-icon { transform: rotate(180deg); }
-    .dropdown-menu { position: absolute; top: calc(100% + 0.7rem); left: 50%; transform: translateX(-50%); min-width: 220px; background: rgba(255,255,255,0.98); border: 1px solid rgba(201,168,76,0.2); box-shadow: 0 16px 40px rgba(15,15,15,0.08); padding: 0.7rem 0; opacity: 0; pointer-events: none; transition: all 0.25s ease; z-index: 1100; }
+    .dropdown-icon {
+      font-size: 0.75rem; color: var(--accent); display: inline-block;
+      transform: translateY(-1px); transition: transform 0.25s ease;
+    }
+    .nav-dropdown.open .dropdown-icon { transform: translateY(-1px) rotate(180deg); }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 0.7rem); left: 50%; transform: translateX(-50%);
+      min-width: 220px; background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(201,168,76,0.2); box-shadow: 0 16px 40px rgba(15,15,15,0.08);
+      padding: 0.7rem 0; opacity: 0; pointer-events: none; transition: all 0.25s ease; z-index: 1100;
+    }
+    /* Click-only: open class controls visibility, not :hover */
     .nav-dropdown.open .dropdown-menu { opacity: 1; pointer-events: auto; }
-    .dropdown-menu a { display: block; padding: 0.75rem 1rem; color: var(--dark); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; text-transform: none; }
+    .dropdown-menu a { display: block; padding: 0.75rem 1rem; color: var(--dark); font-size: 0.75rem; font-weight: 500; text-transform: none; letter-spacing: 0.05em; }
     .dropdown-menu a:hover { background: rgba(201,168,76,0.08); color: var(--gold-dim); }
     .nav-cta { padding: 0.6rem 1.6rem; border: 1px solid var(--gold-soft); color: var(--cream); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.3s; }
     .nav-cta:hover { background: var(--gold-soft); color: var(--deep-navy); }
@@ -78,14 +121,15 @@
     .hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
     .hamburger.active span { background: var(--gold-soft); }
 
-    /* ── MOBILE MENU ── */
+    /* ── MOBILE DRAWER (matched to homepage: floating, left-aligned, fluid width) ── */
     .mobile-menu {
       display: none;
       position: fixed;
       top: 70px;
-      right: 1rem;
-      left: auto;
-      width: 220px;
+      left: 0.75rem;
+      right: auto;
+      width: min(240px, calc(100vw - 1.5rem));
+      max-width: calc(100vw - 1.5rem);
       background: rgba(15, 35, 68, 0.97);
       backdrop-filter: blur(14px);
       z-index: 999;
@@ -97,21 +141,47 @@
       opacity: 0;
       pointer-events: none;
       transition: transform 0.22s ease, opacity 0.22s ease;
+      overflow: hidden;
     }
     .mobile-menu.open { transform: translateY(0) scale(1); opacity: 1; pointer-events: auto; }
     .mobile-menu ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
-    .mobile-menu ul li a { display: block; padding: 0.45rem 0; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream-2); font-weight: 600; border-bottom: 1px solid rgba(242,214,143,0.08); transition: color 0.2s; }
-    .mobile-menu ul li:last-child a { border-bottom: none; }
+    .mobile-menu ul li a {
+      display: block;
+      padding: 0.45rem 0;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream-2);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
     .mobile-menu ul li a:hover { color: var(--gold-soft); }
     .mobile-sub { padding-left: 0.75rem; }
-    .mobile-sub a { font-size: 0.66rem !important; color: rgba(247,239,228,0.65) !important; letter-spacing: 0.08em !important; padding: 0.35rem 0 !important; }
+    .mobile-sub a { font-size: 0.66rem !important; color: rgba(247,239,228,0.65) !important; letter-spacing: 0.08em !important; padding: 0.35rem 0 !important; text-decoration: none !important; }
     .mobile-sub a:hover { color: var(--gold-soft) !important; }
-    .mobile-group-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream-2); font-weight: 600; padding: 0.45rem 0; border-bottom: 1px solid rgba(242,214,143,0.08); display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+    .mobile-group-label {
+      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--cream-2); font-weight: 600; padding: 0.45rem 0;
+      display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer; text-decoration: none;
+    }
     .mobile-group-label .mob-icon { font-size: 0.65rem; transition: transform 0.22s; }
     .mobile-group-label.open .mob-icon { transform: rotate(180deg); }
     .mobile-sub { display: none !important; }
     .mobile-sub.open { display: block !important; }
-    .mobile-cta { display: block; margin-top: 0.7rem; padding: 0.45rem 0.9rem; border: 1px solid var(--gold-soft); color: var(--cream); font-size: 0.66rem; letter-spacing: 0.13em; text-transform: uppercase; text-align: center; border-radius: 4px; transition: all 0.25s; }
+    .mobile-cta {
+      display: block; margin-top: 0.7rem;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid var(--gold-soft);
+      color: var(--cream);
+      font-size: 0.66rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      text-align: center;
+      border-radius: 4px;
+      transition: all 0.25s;
+    }
     .mobile-cta:hover { background: var(--gold-soft); color: var(--deep-navy); }
 
     footer { background: var(--deep-navy); padding: 2.5rem 3rem; padding-right: 110px; border-top: 1px solid rgba(242,214,143,0.2); display: flex; justify-content: space-between; align-items: center; }
@@ -119,27 +189,58 @@
     .footer-social a{width:36px;height:36px;border:1px solid rgba(247,239,228,0.35);display:flex;align-items:center;justify-content:center;transition:all .3s;}
     .footer-social a svg{width:16px;height:16px;stroke:var(--cream-2);fill:none;stroke-width:1.5;}
 
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      nav { padding: 1rem 2rem; }
+      nav.scrolled { padding: 1rem 2rem; }
+      .nav-links { gap: 1.25rem; }
+    }
     @media (max-width:900px){
-      nav{padding:0.9rem 1.5rem;}
-      nav.scrolled{padding:0.9rem 1.5rem;}
+      nav{padding:1.2rem 1.5rem; align-items:center;}
+      nav.scrolled{padding:0.8rem 1.5rem;}
       .nav-links,.nav-cta{display:none;}
-      .hamburger{display:flex;}
+      .hamburger{display:flex; margin-left:auto;}
       .mobile-menu{display:block;}
-      .process-steps{grid-template-columns:1fr 1fr;}
       .services-grid{grid-template-columns:1fr 1fr;}
       footer{padding:2rem 1.5rem;flex-direction:column;align-items:flex-start;}
     }
     @media (max-width:600px){
-      .process-steps,.services-grid{grid-template-columns:1fr;}
+      .services-grid{grid-template-columns:1fr;}
       .top{flex-direction:column;align-items:flex-start;}
       .section-hero{padding:6rem 1.25rem 2.5rem;min-height:auto;}
       .section-hero-content{padding:1rem 0.5rem;}
       .section-hero-content h1{font-size:clamp(1.6rem,6vw,2.2rem);}
       .section-hero-content p{font-size:0.92rem;}
     }
+    @media (max-width: 480px) {
+      nav { padding: 0.9rem 1rem; }
+      .logo img { height: 40px; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- MOBILE OVERLAY + DRAWER -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+    <ul>
+      <li>
+        <span class="mobile-group-label" id="whoWeAreToggle">
+          Who We Are <span class="mob-icon">▾</span>
+        </span>
+        <ul class="mobile-sub" id="whoWeAreSub">
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="vision.html">Our Vision</a></li>
+          <li><a href="values.html">Our Values</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </li>
+      <li><a href="services.html" class="active">What We Do</a></li>
+      <li><a href="news.html">News and Updates</a></li>
+    </ul>
+  </div>
+
+  <!-- NAVIGATION -->
   <nav id="navbar">
     <a href="media-services-website.html" class="logo">
       <img src="images/idalia_logo_cropped.png" alt="Idalia Studio and Events Ltd logo">
@@ -149,46 +250,19 @@
         <a href="#" class="dropdown-toggle">Who We Are <span class="dropdown-icon">▾</span></a>
         <div class="dropdown-menu">
           <a href="mission.html">Our Mission</a>
-          <a href="history.html">Our History</a>
+          <a href="vision.html">Our Vision</a>
           <a href="values.html">Our Values</a>
-          <a href="principles.html">Our Principles</a>
           <a href="leadership.html">Leadership</a>
           <a href="contact.html">Contact Us</a>
         </div>
       </li>
       <li><a href="services.html" class="active">What We Do</a></li>
-      <li><a href="partners.html">Our Partners</a></li>
       <li><a href="news.html">News and Updates</a></li>
-      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="https://wa.me/+254707389565?text=Hello%20Idalia%20Studio%20and%20Events%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Kindly%20share%20more%20information%20about%20booking%20and%20pricing.%20Thank%20you." class="nav-cta" target="_blank">Book Now</a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
-
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
-    <ul>
-      <li>
-        <span class="mobile-group-label" id="whoWeAreToggle">
-          Who We Are <span class="mob-icon">▾</span>
-        </span>
-        <ul class="mobile-sub" id="whoWeAreSub">
-          <li><a href="mission.html">Our Mission</a></li>
-          <li><a href="history.html">Our History</a></li>
-          <li><a href="values.html">Our Values</a></li>
-          <li><a href="principles.html">Our Principles</a></li>
-          <li><a href="leadership.html">Leadership</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </li>
-      <li><a href="services.html" class="active">What We Do</a></li>
-      <li><a href="partners.html">Our Partners</a></li>
-      <li><a href="news.html">News and Updates</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a href="https://wa.me/+254707389565?text=Hello%20Idalia%20Studio%20and%20Events%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Kindly%20share%20more%20information%20about%20booking%20and%20pricing.%20Thank%20you." class="mobile-cta" target="_blank">Book Now</a>
-  </div>
 
   <div class="page">
     <div class="section-hero">
@@ -201,33 +275,6 @@
     <div class="top"><a href="media-services-website.html">← Back to home</a><span class="eyebrow">What We Do</span></div>
 
     <div class="section-block card">
-      <p class="eyebrow">Our Process</p>
-      <h1>How we bring your vision to life</h1>
-      <div class="process-steps">
-        <div class="step">
-          <div class="step-num">01</div>
-          <h3>Consultation</h3>
-          <p>We start by understanding your vision, goals, and requirements through an in-depth discovery session.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <h3>Pre-Production</h3>
-          <p>Storyboarding, location scouting, scheduling, and preparing every creative detail before we roll.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <h3>Production Day</h3>
-          <p>Our crew arrives fully equipped and ready. We capture with precision, artistry, and a commitment to excellence.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">04</div>
-          <h3>Delivery</h3>
-          <p>Refined post-production followed by delivery of final files to your specification, on time, every time.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-block card">
       <p class="eyebrow">Our Services</p>
       <h1>Everything you need for a flawless event</h1>
       <div class="services-grid">
@@ -237,7 +284,7 @@
           <p>Weddings, graduations, corporate events, and portrait sessions captured with artistry and attention to detail.</p>
         </div>
         <div class="service-card">
-          <img src="images/videography icon.jpg" alt="Videography">
+          <img src="images/videography icon.jpeg" alt="Videography">
           <h3>Videography</h3>
           <p>Cinematic event films, brand content, and documentary-style coverage for every platform.</p>
         </div>
@@ -278,7 +325,7 @@
       <a href="https://www.facebook.com/profile.php?id=61575433869900" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
         <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
       </a>
-      <a href="https://www.youtube.com/@mozelmophat" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <a href="https://www.youtube.com/@idaliastudioandevents" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
         <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02"/></svg>
       </a>
       <a href="https://www.tiktok.com/@idaliastudioandevents" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
@@ -288,13 +335,20 @@
   </footer>
 
   <script>
-    // Desktop dropdown — click only, no hover
+    // ── NAVBAR SCROLL ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ── DESKTOP DROPDOWN (click-only, no hover) ──
     const desktopDropdown = document.getElementById('desktopDropdown');
     const desktopToggle = desktopDropdown.querySelector('.dropdown-toggle');
     const desktopDropdownLinks = desktopDropdown.querySelectorAll('.dropdown-menu a');
 
     desktopToggle.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       desktopDropdown.classList.toggle('open');
     });
     document.addEventListener('click', (e) => {
@@ -302,47 +356,44 @@
     });
     desktopDropdownLinks.forEach(link => link.addEventListener('click', () => desktopDropdown.classList.remove('open')));
 
-    // Mobile hamburger / menu
+    // ── MOBILE HAMBURGER + DRAWER ──
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      hamburger.classList.toggle('active', isOpen);
-      hamburger.setAttribute('aria-expanded', isOpen);
-    });
-
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        hamburger.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!document.querySelector('nav').contains(e.target) && !mobileMenu.contains(e.target)) {
-        mobileMenu.classList.remove('open');
-        hamburger.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // Mobile "Who We Are" sub-dropdown — click only
     const whoToggle = document.getElementById('whoWeAreToggle');
     const whoSub = document.getElementById('whoWeAreSub');
 
-    whoToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = whoSub.classList.toggle('open');
-      whoToggle.classList.toggle('open', isOpen);
-    });
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('active', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
+      });
 
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-    });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!document.querySelector('nav').contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.remove('open');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // ── MOBILE "WHO WE ARE" SUB-DROPDOWN (click-only) ──
+    if (whoToggle && whoSub) {
+      whoToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = whoSub.classList.toggle('open');
+        whoToggle.classList.toggle('open', open);
+      });
+    }
   </script>
 </body>
 </html>

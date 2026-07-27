@@ -38,7 +38,7 @@
     .news-card p{margin-bottom:1rem;}
     .news-card a{color:var(--burgundy-deep);font-weight:600;}
 
-    /* ── NAV ── */
+    /* ── NAV (matched to homepage) ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       padding: 0.9rem 4rem;
@@ -46,13 +46,14 @@
       display: flex; align-items: center; justify-content: space-between;
       background: var(--deep-navy);
       transition: background 0.4s ease, padding 0.4s ease;
+      gap: 1rem;
     }
     nav.scrolled {
       background: rgba(15, 35, 68, 0.96);
       backdrop-filter: blur(12px);
       padding: 0.9rem 4rem;
       min-height: 70px;
-      border-bottom: 1px solid rgba(242,214,143,0.25);
+      border-bottom: 1px solid rgba(242, 214, 143, 0.25);
       box-shadow: 0 8px 30px rgba(20,20,20,0.16);
     }
     .logo {
@@ -66,25 +67,32 @@
       filter: drop-shadow(0 0 10px rgba(242, 214, 143, 0.45)) brightness(1.08);
       transform: scale(1.03);
     }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; align-items: center; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
       font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
       color: var(--cream-2); text-decoration: none; transition: color 0.3s;
-      position: relative; font-weight: 600;
+      font-weight: 600;
     }
     .nav-links a:hover { color: var(--gold-soft); }
+    .nav-links a.active, .nav-links .dropdown-toggle.active { color: var(--gold-soft); }
+
+    /* Desktop dropdown — click-only, no hover trigger */
     .nav-dropdown { position: relative; }
     .dropdown-toggle { display: inline-flex; align-items: center; gap: 0.35rem; }
-    .dropdown-icon { font-size: 0.75rem; color: var(--accent); display: inline-block; transform: translateY(-1px); transition: transform 0.25s ease; }
+    .dropdown-icon {
+      font-size: 0.75rem; color: var(--accent); display: inline-block;
+      transform: translateY(-1px); transition: transform 0.25s ease;
+    }
+    .nav-dropdown.open .dropdown-icon { transform: translateY(-1px) rotate(180deg); }
     .dropdown-menu {
       position: absolute; top: calc(100% + 0.7rem); left: 50%; transform: translateX(-50%);
       min-width: 220px; background: rgba(255,255,255,0.98);
       border: 1px solid rgba(111,36,52,0.16); box-shadow: 0 16px 40px rgba(15,15,15,0.08);
       padding: 0.7rem 0; opacity: 0; pointer-events: none; transition: all 0.25s ease; z-index: 1100;
     }
-    .nav-dropdown.open .dropdown-menu,
-    .nav-dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
-    .dropdown-menu a { display: block; padding: 0.75rem 1rem; color: var(--dark); font-size: 0.75rem; font-weight: 500; white-space: nowrap; }
+    /* Click-only: open class controls visibility, not :hover */
+    .nav-dropdown.open .dropdown-menu { opacity: 1; pointer-events: auto; }
+    .dropdown-menu a { display: block; padding: 0.75rem 1rem; color: var(--dark); font-size: 0.75rem; font-weight: 500; text-transform: none; letter-spacing: 0.05em; white-space: nowrap; }
     .dropdown-menu a:hover { background: rgba(199,154,45,0.08); color: var(--gold-dark); }
     .nav-cta { padding:.6rem 1.6rem; border:1px solid var(--gold-soft); color:var(--cream); font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; text-decoration:none; transition:all .3s; }
     .nav-cta:hover { background:var(--gold-soft); color:var(--deep-navy); }
@@ -120,14 +128,15 @@
     .hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
     .hamburger.active span { background: var(--gold-soft); }
 
-    /* ── MOBILE DRAWER ── */
+    /* ── MOBILE DRAWER (matched to homepage: floating, left-aligned, fluid width) ── */
     .mobile-menu {
       display: none;
       position: fixed;
       top: 70px;
-      right: 1rem;
-      left: auto;
-      width: 220px;
+      left: 0.75rem;
+      right: auto;
+      width: min(240px, calc(100vw - 1.5rem));
+      max-width: calc(100vw - 1.5rem);
       background: rgba(15, 35, 68, 0.97);
       backdrop-filter: blur(14px);
       z-index: 999;
@@ -139,6 +148,7 @@
       opacity: 0;
       pointer-events: none;
       transition: transform 0.22s ease, opacity 0.22s ease;
+      overflow: hidden;
     }
     .mobile-menu.open {
       transform: translateY(0) scale(1);
@@ -154,29 +164,21 @@
       text-transform: uppercase;
       color: var(--cream-2);
       font-weight: 600;
-      border-bottom: 1px solid rgba(242,214,143,0.08);
+      text-decoration: none;
       transition: color 0.2s;
     }
-    .mobile-menu ul li:last-child a { border-bottom: none; }
     .mobile-menu ul li a:hover { color: var(--gold-soft); }
     .mobile-sub { padding-left: 0.75rem; }
-    .mobile-sub a { font-size: 0.66rem !important; color: rgba(247,239,228,0.65) !important; letter-spacing: 0.08em !important; padding: 0.35rem 0 !important; }
+    .mobile-sub a { font-size: 0.66rem !important; color: rgba(247,239,228,0.65) !important; letter-spacing: 0.08em !important; padding: 0.35rem 0 !important; text-decoration: none !important; }
     .mobile-sub a:hover { color: var(--gold-soft) !important; }
     .mobile-group-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--cream-2);
-      font-weight: 600;
-      padding: 0.45rem 0;
-      border-bottom: 1px solid rgba(242,214,143,0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
+      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--cream-2); font-weight: 600; padding: 0.45rem 0;
+      display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer; text-decoration: none;
     }
-    .mobile-group-label .dropdown-icon { transition: transform 0.22s; font-size: 0.65rem; }
-    .mobile-group-label.open .dropdown-icon { transform: rotate(180deg); }
+    .mobile-group-label .mob-icon { font-size: 0.65rem; transition: transform 0.22s; }
+    .mobile-group-label.open .mob-icon { transform: rotate(180deg); }
     .mobile-sub { display: none !important; }
     .mobile-sub.open { display: block !important; }
     .mobile-cta {
@@ -204,77 +206,73 @@
     .footer-social a:hover svg{stroke:var(--gold-soft);}
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      nav { padding: 1rem 2rem; }
+      nav.scrolled { padding: 1rem 2rem; }
+      .nav-links { gap: 1.25rem; }
+    }
     @media (max-width: 900px) {
-      nav { padding: 0.9rem 1.5rem; }
-      nav.scrolled { padding: 0.9rem 1.5rem; }
+      nav { padding: 1.2rem 1.5rem; align-items: center; }
+      nav.scrolled { padding: 0.8rem 1.5rem; }
       .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
+      .hamburger { display: flex; margin-left: auto; }
       .mobile-menu { display: block; }
       footer{padding:2rem 1.5rem;flex-direction:column;align-items:flex-start;}
     }
-    @media (max-width:600px){
+    @media (max-width: 600px){
       .top{flex-direction:column;align-items:flex-start;}
+    }
+    @media (max-width: 480px) {
+      nav { padding: 0.9rem 1rem; }
+      .logo img { height: 40px; }
     }
   </style>
 </head>
 <body>
 
-  <nav id="navbar">
-    <a href="media-services-website.html" class="logo">
-      <img src="images/idalia_logo_cropped.png" alt="Idalia Studio and Events Ltd logo">
-    </a>
-
-    <!-- Desktop nav -->
-    <ul class="nav-links">
-      <li class="nav-dropdown">
-        <a href="#" class="dropdown-toggle">Who We Are <span class="dropdown-icon">▾</span></a>
-        <div class="dropdown-menu">
-          <a href="mission.html">Our Mission</a>
-          <a href="history.html">Our History</a>
-          <a href="values.html">Our Values</a>
-          <a href="principles.html">Our Principles</a>
-          <a href="leadership.html">Leadership</a>
-          <a href="contact.html">Contact Us</a>
-        </div>
-      </li>
-      <li><a href="services.html">What We Do</a></li>
-      <li><a href="partners.html">Our Partners</a></li>
-      <li><a href="news.html">News and Updates</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a href="https://wa.me/+254707389565?text=Hello%20Idalia%20Studio%20and%20Events%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Kindly%20share%20more%20information%20about%20booking%20and%20pricing.%20Thank%20you." class="nav-cta" target="_blank">Book Now</a>
-
-    <!-- Hamburger -->
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
-
-  <!-- Mobile drawer -->
+  <!-- MOBILE OVERLAY + DRAWER -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
     <ul>
       <li>
         <span class="mobile-group-label" id="whoWeAreToggle">
-          Who We Are <span class="dropdown-icon">▾</span>
+          Who We Are <span class="mob-icon">▾</span>
         </span>
         <ul class="mobile-sub" id="whoWeAreSub">
           <li><a href="mission.html">Our Mission</a></li>
-          <li><a href="history.html">Our History</a></li>
+          <li><a href="vision.html">Our Vision</a></li>
           <li><a href="values.html">Our Values</a></li>
-          <li><a href="principles.html">Our Principles</a></li>
           <li><a href="leadership.html">Leadership</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </li>
       <li><a href="services.html">What We Do</a></li>
-      <li><a href="partners.html">Our Partners</a></li>
       <li><a href="news.html">News and Updates</a></li>
-      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="https://wa.me/+254707389565?text=Hello%20Idalia%20Studio%20and%20Events%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Kindly%20share%20more%20information%20about%20booking%20and%20pricing.%20Thank%20you." class="mobile-cta" target="_blank">Book Now</a>
   </div>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <a href="media-services-website.html" class="logo">
+      <img src="images/idalia_logo_cropped.png" alt="Idalia Studio and Events Ltd logo">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown" id="desktopDropdown">
+        <a href="#" class="dropdown-toggle">Who We Are <span class="dropdown-icon">▾</span></a>
+        <div class="dropdown-menu">
+          <a href="mission.html">Our Mission</a>
+          <a href="vision.html">Our Vision</a>
+          <a href="values.html">Our Values</a>
+          <a href="leadership.html">Leadership</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </li>
+      <li><a href="services.html">What We Do</a></li>
+      <li><a href="news.html" class="active">News and Updates</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
   <div class="page">
     <div class="section-hero">
@@ -304,7 +302,7 @@
       <a href="https://www.facebook.com/profile.php?id=61575433869900" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
         <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
       </a>
-      <a href="https://www.youtube.com/@mozelmophat" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <a href="https://www.youtube.com/@idaliastudioandevents" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
         <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02"/></svg>
       </a>
       <a href="https://www.tiktok.com/@idaliastudioandevents" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
@@ -314,58 +312,65 @@
   </footer>
 
   <script>
-    // Scroll effect
+    // ── NAVBAR SCROLL ──
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // Hamburger toggle
+    // ── DESKTOP DROPDOWN (click-only, no hover) ──
+    const desktopDropdown = document.getElementById('desktopDropdown');
+    const desktopToggle = desktopDropdown.querySelector('.dropdown-toggle');
+    const desktopDropdownLinks = desktopDropdown.querySelectorAll('.dropdown-menu a');
+
+    desktopToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      desktopDropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!desktopDropdown.contains(e.target)) desktopDropdown.classList.remove('open');
+    });
+    desktopDropdownLinks.forEach(link => link.addEventListener('click', () => desktopDropdown.classList.remove('open')));
+
+    // ── MOBILE HAMBURGER + DRAWER ──
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      hamburger.classList.toggle('active', isOpen);
-      hamburger.setAttribute('aria-expanded', isOpen);
-    });
-
-    // Close menu on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        hamburger.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (!navbar.contains(e.target) && !mobileMenu.contains(e.target)) {
-        mobileMenu.classList.remove('open');
-        hamburger.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // "Who We Are" accordion in mobile — closed by default, open only on click
     const whoToggle = document.getElementById('whoWeAreToggle');
     const whoSub = document.getElementById('whoWeAreSub');
-    whoSub.classList.remove('open');
-    whoToggle.classList.remove('open');
-    whoToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = whoSub.classList.toggle('open');
-      whoToggle.classList.toggle('open', isOpen);
-    });
 
-    // Desktop dropdown toggle on click
-    document.querySelectorAll('.nav-dropdown').forEach(drop => {
-      drop.querySelector('.dropdown-toggle').addEventListener('click', (e) => {
-        e.preventDefault();
-        drop.classList.toggle('open');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('active', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
       });
-    });
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!document.querySelector('nav').contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.remove('open');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // ── MOBILE "WHO WE ARE" SUB-DROPDOWN (click-only) ──
+    if (whoToggle && whoSub) {
+      whoToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = whoSub.classList.toggle('open');
+        whoToggle.classList.toggle('open', open);
+      });
+    }
   </script>
 </body>
 </html>

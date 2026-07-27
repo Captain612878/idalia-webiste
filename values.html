@@ -4,119 +4,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Values | Idalia Studio and Events Ltd.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root { --cream:#f7efe4; --cream-2:#fcf6eb; --cream-3:#f3e4c8; --burgundy:#6f2434; --burgundy-deep:#4a1928; --gold:#c79a2d; --gold-soft:#f2d68f; --gold-dark:#8e6b1e; --text:#3d2a22; --dark:#1c1512; --muted:#735b46; --light:#fffdfa; --white:#ffffff; --deep-navy:#0f2344; --accent:var(--burgundy); --gold-light:var(--gold-soft); --gold-dim:var(--gold-dark); }
-    *{box-sizing:border-box;margin:0;padding:0;} body{font-family:'DM Sans',sans-serif;min-height:100vh;background-color:var(--cream-2);background-image:linear-gradient(180deg,var(--cream) 0%,var(--cream-2) 100%);color:var(--text);line-height:1.8;overflow-x:hidden;overscroll-behavior-x:none;} a{text-decoration:none;color:inherit;} .page{max-width:100%;margin:0 auto;padding:0 0 5rem;background:transparent;overflow-x:hidden;} .page > .card,.page > .top,.page > p,.page > .news-list{max-width:1000px;width:min(100%,1000px);margin-left:auto;margin-right:auto;padding-left:1.5rem;padding-right:1.5rem;} .eyebrow{color:var(--burgundy);text-transform:uppercase;letter-spacing:.25em;font-size:.75rem;font-weight:600;margin-bottom:1rem;} h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3rem);font-weight:600;margin-bottom:1rem;color:var(--burgundy);} p{color:var(--muted);font-size:1rem;margin-bottom:1rem;} .section-hero{position:relative;min-height:100vh;border-radius:0;overflow:hidden;margin:4rem 0 2rem 0;display:flex;align-items:center;justify-content:flex-start;padding:5rem 1.5rem 3rem;} .section-hero::before{content:'';position:absolute;inset:0;background:url('bg/our values bg.png') center/cover no-repeat;transform:scale(1.03);z-index:-2;} .section-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,15,15,0.5) 0%,rgba(15,15,15,0.3) 100%);z-index:-1;} .section-hero-content{position:relative;z-index:1;padding:clamp(2rem,4vw,3rem);max-width:760px;margin-left:0;margin-right:auto;width:min(100%,1000px);text-align:left;display:none;} .section-hero-content h1{color:var(--white);} .section-hero-content p{color:rgba(255,255,255,0.9);} .section-hero-content .eyebrow{color:var(--gold-soft);} .card{background:var(--cream-2);border:1px solid rgba(111,36,52,0.16);padding:2rem;border-radius:16px;box-shadow:0 18px 40px rgba(15,15,15,0.05);} .btn{display:inline-block;margin-top:1.25rem;padding:.9rem 1.4rem;background:var(--burgundy);color:var(--cream);font-weight:600;border-radius:999px;} .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;} .top a{color:var(--gold);font-weight:600}; nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    padding: 1.5rem 4rem;
-    display: flex; align-items: center; justify-content: space-between;
-    background: #fffdfa;
-    transition: background 0.4s ease, padding 0.4s ease;
-  } nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    padding: 0.9rem 4rem;
-    min-height: 70px;
-    display: flex; align-items: center; justify-content: space-between;
-    background: var(--deep-navy);
-    transition: background 0.4s ease, padding 0.4s ease;
-  }
-  nav.scrolled {
-    background: rgba(15,35,68,0.96);
-    backdrop-filter: blur(12px);
-    padding: 0.9rem 4rem;
-    min-height: 70px;
-    border-bottom: 1px solid rgba(242,214,143,0.25);
-    box-shadow: 0 8px 30px rgba(20,20,20,0.16);
-  }
-  .logo {
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-  .logo:hover {
-    transform: translateY(-2px);
-  }
-  .logo img { height: 50px; width: auto; display: block; transition: transform 0.3s ease, filter 0.3s ease; }
-  .logo:hover img {
-    filter: drop-shadow(0 0 10px rgba(242, 214, 143, 0.45)) brightness(1.08);
-    transform: scale(1.03);
-  }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; align-items: center; }
-  .nav-links a {
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--cream-2);
-    text-decoration: none;
-    transition: color 0.3s;
-    position: relative;
-    font-weight: 600;
-  }
-  .nav-links a:hover { color: var(--gold-soft); }
-  .nav-dropdown { position: relative; }
-  .dropdown-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-  }
-  .dropdown-icon {
-    font-size: 0.75rem;
-    color: var(--accent);
-    display: inline-block;
-    transform: translateY(-1px);
-    transition: transform 0.25s ease;
-  }
-  .nav-dropdown.open .dropdown-icon,
-  .nav-dropdown:hover .dropdown-icon {
-    transform: translateY(-1px) rotate(180deg);
-  }
-  .dropdown-menu {
-    position: absolute;
-    top: calc(100% + 0.7rem);
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 220px;
-    background: rgba(255,255,255,0.98);
-    border: 1px solid rgba(201,168,76,0.2);
-    box-shadow: 0 16px 40px rgba(15,15,15,0.08);
-    padding: 0.7rem 0;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.25s ease;
-    z-index: 1100;
-  }
-  .nav-dropdown.open .dropdown-menu,
-  .nav-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .dropdown-menu a {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: var(--dark);
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-  .dropdown-menu a:hover {
-    background: rgba(201,168,76,0.08);
-    color: var(--gold-dim);
-  }
-  .nav-cta {
-    padding: 0.6rem 1.6rem;
-    border: 1px solid var(--gold-soft);
-    color: var(--cream);
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-  .nav-cta:hover {
-    background: var(--gold-soft);
-    color: var(--deep-navy);
-  }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',sans-serif;min-height:100vh;background-color:var(--cream-2);background-image:linear-gradient(180deg,var(--cream) 0%,var(--cream-2) 100%);color:var(--text);line-height:1.8;overflow-x:hidden;overscroll-behavior-x:none;}
+    a{text-decoration:none;color:inherit;}
+    .page{max-width:100%;margin:0 auto;padding:0 0 5rem;background:transparent;overflow-x:hidden;}
+
+    /* ── VALUES INTRO ── */
+    .values-intro{max-width:760px;width:min(100%,760px);margin:0 auto;padding:8.5rem 1.5rem 2.5rem;text-align:center;}
+    .values-intro .eyebrow{color:var(--gold-dark);text-transform:uppercase;letter-spacing:.3em;font-size:.72rem;font-weight:700;margin-bottom:1.1rem;display:flex;align-items:center;justify-content:center;gap:.85rem;}
+    .values-intro .eyebrow::before,.values-intro .eyebrow::after{content:'';width:28px;height:1px;background:var(--gold);}
+    .values-intro h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,3.4rem);font-weight:700;color:var(--burgundy);margin-bottom:1rem;line-height:1.1;}
+    .values-intro p{color:var(--muted);font-size:1.05rem;max-width:560px;margin:0 auto;}
+
+    /* ── VALUES GRID ── */
+    .values-wrap{max-width:1080px;width:min(100%,1080px);margin:0 auto;padding:0 1.5rem;}
+    .values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+    .value-card{
+      position:relative;
+      background:linear-gradient(180deg,var(--white) 0%,var(--cream-2) 100%);
+      border:1px solid rgba(111,36,52,0.12);
+      border-radius:20px;
+      padding:2.2rem 2rem;
+      box-shadow:0 16px 40px rgba(20,15,10,0.06);
+      transition:transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      overflow:hidden;
+    }
+    .value-card::before{
+      content:'';
+      position:absolute; top:0; left:0; right:0; height:4px;
+      background:linear-gradient(90deg,var(--gold-soft),var(--gold),var(--burgundy));
+      transform:scaleX(0); transform-origin:left;
+      transition:transform 0.45s ease;
+    }
+    .value-card:hover{ transform:translateY(-6px); box-shadow:0 24px 55px rgba(20,15,10,0.11); border-color:rgba(199,154,45,0.35); }
+    .value-card:hover::before{ transform:scaleX(1); }
+    .value-index{
+      font-family:'Cormorant Garamond',serif;
+      font-size:3.4rem; font-weight:700; line-height:1;
+      color:rgba(111,36,52,0.08);
+      position:absolute; top:1rem; right:1.4rem;
+      pointer-events:none;
+    }
+    .value-icon{
+      width:3.1rem; height:3.1rem; border-radius:14px;
+      background:linear-gradient(135deg,var(--burgundy) 0%,var(--burgundy-deep) 100%);
+      color:var(--cream-2);
+      display:inline-flex; align-items:center; justify-content:center;
+      box-shadow:0 10px 24px rgba(111,36,52,0.25);
+      margin-bottom:1.3rem;
+      position:relative; z-index:1;
+    }
+    .value-icon svg{ width:1.4rem; height:1.4rem; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+    .value-card h3{
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.45rem; font-weight:700;
+      color:var(--burgundy-deep);
+      margin-bottom:.6rem;
+      position:relative; z-index:1;
+    }
+    .value-card p{
+      color:var(--muted); font-size:.95rem; line-height:1.85; margin:0;
+      position:relative; z-index:1;
+    }
+
+    /* ── HEADER (matched to homepage: click-only dropdown, consistent breakpoints & scroll shrink) ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.9rem 4rem;min-height:70px;display:flex;align-items:center;justify-content:space-between;background:var(--deep-navy);transition:background 0.4s ease,padding 0.4s ease;}
+    nav.scrolled{background:rgba(15,35,68,0.96);backdrop-filter:blur(12px);padding:0.9rem 4rem;min-height:70px;border-bottom:1px solid rgba(242,214,143,0.25);box-shadow:0 8px 30px rgba(20,20,20,0.16);}
+    .logo{display:inline-flex;align-items:center;cursor:pointer;transition:transform 0.3s ease,filter 0.3s ease;}
+    .logo:hover{transform:translateY(-2px);}
+    .logo img{height:50px;width:auto;display:block;transition:transform 0.3s ease,filter 0.3s ease;}
+    .logo:hover img{filter:drop-shadow(0 0 10px rgba(242,214,143,0.45)) brightness(1.08);transform:scale(1.03);}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;margin:0;padding:0;align-items:center;}
+    .nav-links a{font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--cream-2);text-decoration:none;transition:color 0.3s;position:relative;font-weight:600;}
+    .nav-links a:hover{color:var(--gold-soft);}
+    .nav-dropdown{position:relative;}
+    .dropdown-toggle{display:inline-flex;align-items:center;gap:0.35rem;}
+    .dropdown-icon{font-size:0.75rem;color:var(--accent);display:inline-block;transform:translateY(-1px);transition:transform 0.25s ease;}
+    /* Click-only: no hover trigger on dropdown */
+    .nav-dropdown.open .dropdown-icon{transform:translateY(-1px) rotate(180deg);}
+    .dropdown-menu{position:absolute;top:calc(100% + 0.7rem);left:50%;transform:translateX(-50%);min-width:220px;background:rgba(255,255,255,0.98);border:1px solid rgba(201,168,76,0.2);box-shadow:0 16px 40px rgba(15,15,15,0.08);padding:0.7rem 0;opacity:0;pointer-events:none;transition:all 0.25s ease;z-index:1100;}
+    /* Click-only: open class controls visibility, not :hover */
+    .nav-dropdown.open .dropdown-menu{opacity:1;pointer-events:auto;}
+    .dropdown-menu a{display:block;padding:0.75rem 1rem;color:var(--dark);font-size:0.75rem;font-weight:500;}
+    .dropdown-menu a:hover{background:rgba(201,168,76,0.08);color:var(--gold-dim);}
+    .nav-cta{padding:0.6rem 1.6rem;border:1px solid var(--gold-soft);color:var(--cream);font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+    .nav-cta:hover{background:var(--gold-soft);color:var(--deep-navy);}
 
     /* ── HAMBURGER ── */
     .hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:36px;height:36px;cursor:pointer;background:none;border:1px solid rgba(242,214,143,0.3);border-radius:6px;padding:6px;transition:border-color 0.3s,background 0.3s;flex-shrink:0;}
@@ -131,47 +106,53 @@
     .mobile-menu{display:none;position:fixed;top:70px;left:0.75rem;right:auto;width:min(240px,calc(100vw - 1.5rem));max-width:calc(100vw - 1.5rem);background:rgba(15,35,68,0.97);backdrop-filter:blur(14px);z-index:999;padding:0.75rem 1rem 0.9rem;border:1px solid rgba(242,214,143,0.18);border-radius:10px;box-shadow:0 12px 32px rgba(10,10,20,0.28);transform:translateY(-6px) scale(0.97);opacity:0;pointer-events:none;transition:transform 0.22s ease,opacity 0.22s ease;overflow:hidden;}
     .mobile-menu.open{transform:translateY(0) scale(1);opacity:1;pointer-events:auto;}
     .mobile-menu ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0;}
-    .mobile-menu ul li a{display:block;padding:0.45rem 0;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--cream-2);font-weight:600;border-bottom:1px solid rgba(242,214,143,0.08);transition:color 0.2s;}
-    .mobile-menu ul li:last-child a{border-bottom:none;}
-    .mobile-menu ul li a:hover{color:var(--gold-soft);}    
+    .mobile-menu ul li a{display:block;padding:0.45rem 0;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--cream-2);font-weight:600;text-decoration:none;transition:color 0.2s;}
+    .mobile-menu ul li a:hover{color:var(--gold-soft);}
     .mobile-sub{padding-left:0.75rem;}
-    .mobile-sub a{font-size:0.66rem !important;color:rgba(247,239,228,0.65) !important;letter-spacing:0.08em !important;padding:0.35rem 0 !important;}
+    .mobile-sub a{font-size:0.66rem !important;color:rgba(247,239,228,0.65) !important;letter-spacing:0.08em !important;padding:0.35rem 0 !important;text-decoration:none !important;}
     .mobile-sub a:hover{color:var(--gold-soft) !important;}
-    .mobile-group-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--cream-2);font-weight:600;padding:0.45rem 0;border-bottom:1px solid rgba(242,214,143,0.08);display:flex;justify-content:space-between;align-items:center;cursor:pointer;}
+    .mobile-group-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--cream-2);font-weight:600;padding:0.45rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-decoration:none;}
     .mobile-group-label .mob-icon{font-size:0.65rem;transition:transform 0.22s;}
     .mobile-group-label.open .mob-icon{transform:rotate(180deg);}
     .mobile-sub{display:none !important;}
     .mobile-sub.open{display:block !important;}
     .mobile-cta{display:block;margin-top:0.7rem;padding:0.45rem 0.9rem;border:1px solid var(--gold-soft);color:var(--cream);font-size:0.66rem;letter-spacing:0.13em;text-transform:uppercase;text-align:center;border-radius:4px;transition:all 0.25s;}
     .mobile-cta:hover{background:var(--gold-soft);color:var(--deep-navy);}
-  @media (max-width: 900px) {
-    nav { padding: 0.9rem 1rem; justify-content: space-between; gap: 0.75rem; width: 100%; max-width: 100vw; overflow-x: hidden; }
-    .nav-links { display: none; }
-    .nav-cta { display: none; }
-    .hamburger { display: flex; margin-left: auto; }
-    .logo { margin-left: 0.15rem; }
-    .mobile-menu { display: block; }
-  }
-  @media (max-width: 480px) {
-    h1 { font-size: clamp(1.5rem, 7vw, 2rem); line-height: 1.2; font-weight: 600; }
-    .section-hero-content h1 { font-size: clamp(1.3rem, 6vw, 1.8rem); line-height: 1.15; }
-    .section-hero { margin: 0 0 2rem; padding: 5rem 1rem 2rem; }
-    .section-hero::before { background: url('images/values mobile bg.jpg') center/cover no-repeat; transform: none; }
-    .section-hero::after { background: linear-gradient(90deg,rgba(15,15,15,0.7) 0%,rgba(15,15,15,0.5) 100%); }
-    .section-hero-content { padding: clamp(1.5rem, 3vw, 2rem); display: flex; flex-direction: column; }
-    .section-hero-content h1 { color: var(--white); }
-    .section-hero-content p { margin-bottom: 1.2rem; color: rgba(255,255,255,0.9); }
-    .section-hero-content .eyebrow { color: var(--gold-soft); }
-    .card { display: flex; flex-direction: column; }
-    .card > a.btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.6rem 0.9rem; font-size: 0.75rem; margin-top: 0.4rem; margin-right: 0.3rem; margin-bottom: 0.3rem; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; }
-    .btn.secondary { padding: 0.6rem 0.9rem; font-size: 0.75rem; background: transparent; border: 1px solid rgba(199,154,45,.35); color: var(--burgundy); margin-left: 0; }
-  }
-  @media (max-width: 760px) {
-    nav { flex-wrap: wrap; gap: 1rem; }
-    .nav-links { width: 100%; justify-content: center; flex-wrap: wrap; }
-  }
-  footer { background: var(--deep-navy); padding: 2.5rem 3rem; padding-right: 110px; border-top: 1px solid rgba(242,214,143,0.2); display: flex; justify-content: space-between; align-items: center; gap: 1.25rem; } @media(max-width:900px){ footer { padding: 2rem 1.25rem; padding-right: 1.25rem; flex-wrap: wrap; justify-content: center; text-align: center; } } .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; letter-spacing: 0.2em; color: var(--cream); } .footer-logo span { color: var(--gold-soft); } .footer-copy { font-size: 0.75rem; color: rgba(247,239,228,0.8); line-height: 1.7; max-width: 420px; } .footer-social { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; } .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(247,239,228,0.35); display: flex; align-items: center; justify-content: center; transition: all 0.3s; text-decoration: none; } .footer-social a:hover { border-color: var(--gold-soft); } .footer-social a svg { width: 16px; height: 16px; stroke: var(--cream-2); fill: none; stroke-width: 1.5; transition: stroke 0.3s; } .footer-social a:hover svg { stroke: var(--gold-soft); } @media (max-width:600px){.top{flex-direction:column;align-items:flex-start;gap:.5rem;}} </style>
+
+    footer { background: var(--deep-navy); padding: 2.5rem 3rem; padding-right: 110px; border-top: 1px solid rgba(242,214,143,0.2); display: flex; justify-content: space-between; align-items: center; gap: 1.25rem; } .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; letter-spacing: 0.2em; color: var(--cream); } .footer-logo span { color: var(--gold-soft); } .footer-copy { font-size: 0.75rem; color: rgba(247,239,228,0.8); line-height: 1.7; max-width: 420px; } .footer-social { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; } .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(247,239,228,0.35); display: flex; align-items: center; justify-content: center; transition: all 0.3s; text-decoration: none; } .footer-social a:hover { border-color: var(--gold-soft); } .footer-social a svg { width: 16px; height: 16px; stroke: var(--cream-2); fill: none; stroke-width: 1.5; transition: stroke 0.3s; } .footer-social a:hover svg { stroke: var(--gold-soft); }
+
+    /* ── HEADER RESPONSIVE (matched to homepage) ── */
+    @media (max-width: 1100px) {
+      nav { padding: 1rem 2rem; }
+      nav.scrolled { padding: 1rem 2rem; }
+      .nav-links { gap: 1.25rem; }
+    }
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; align-items: center; }
+      nav.scrolled { padding: 0.8rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; margin-left: auto; }
+      .mobile-menu { display: block; }
+      footer { padding: 2rem 1.25rem; padding-right: 1.25rem; flex-wrap: wrap; justify-content: center; text-align: center; }
+      .values-grid{ grid-template-columns:1fr; }
+      .values-intro{ padding:7.5rem 1.5rem 2rem; }
+    }
+    @media (max-width: 480px) {
+      nav { padding: 0.9rem 1rem; }
+      .logo img { height: 40px; }
+      .values-intro{ padding:6.25rem 1.25rem 1.75rem; }
+      .values-intro h1{ font-size:clamp(1.7rem,7vw,2.2rem); }
+      .values-intro p{ font-size:.92rem; }
+      .values-wrap{ padding:0 1.25rem; }
+      .value-card{ padding:1.6rem 1.4rem 1.5rem; border-radius:16px; }
+      .value-index{ font-size:2.4rem; top:.6rem; right:1rem; }
+      .value-icon{ width:2.6rem; height:2.6rem; border-radius:12px; margin-bottom:1rem; }
+      .value-icon svg{ width:1.2rem; height:1.2rem; }
+      .value-card h3{ font-size:1.2rem; }
+      .value-card p{ font-size:.9rem; }
+    }
+  </style>
 </head>
 <body>
   <nav id="navbar">
@@ -179,23 +160,19 @@
       <img src="images/idalia_logo_cropped.png" alt="Idalia Studio and Events Ltd logo">
   </a>
   <ul class="nav-links">
-    <li class="nav-dropdown">
+    <li class="nav-dropdown" id="desktopDropdown">
       <a href="#" class="dropdown-toggle">Who We Are <span class="dropdown-icon">▾</span></a>
       <div class="dropdown-menu">
         <a href="mission.html">Our Mission</a>
-        <a href="history.html">Our History</a>
+        <a href="vision.html">Our Vision</a>
         <a href="values.html">Our Values</a>
-        <a href="principles.html">Our Principles</a>
         <a href="leadership.html">Leadership</a>
         <a href="contact.html">Contact Us</a>
       </div>
     </li>
     <li><a href="services.html">What We Do</a></li>
-    <li><a href="partners.html">Our Partners</a></li>
     <li><a href="news.html">News and Updates</a></li>
-    <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="https://wa.me/+254707389565?text=Hello%20Idalia%20Studio%20and%20Events%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Kindly%20share%20more%20information%20about%20booking%20and%20pricing.%20Thank%20you." class="nav-cta" target="_blank">Book Now</a>
 
     <!-- Hamburger -->
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -213,42 +190,65 @@
         </span>
         <ul class="mobile-sub" id="whoWeAreSub">
           <li><a href="mission.html">Our Mission</a></li>
-          <li><a href="history.html">Our History</a></li>
+          <li><a href="vision.html">Our Vision</a></li>
           <li><a href="values.html">Our Values</a></li>
-          <li><a href="principles.html">Our Principles</a></li>
           <li><a href="leadership.html">Leadership</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </li>
       <li><a href="services.html">What We Do</a></li>
-      <li><a href="partners.html">Our Partners</a></li>
       <li><a href="news.html">News and Updates</a></li>
-      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="https://wa.me/+254707389565?text=Hello%20Idalia%20Studio%20and%20Events%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Kindly%20share%20more%20information%20about%20booking%20and%20pricing.%20Thank%20you." class="mobile-cta" target="_blank">Book Now</a>
   </div>
+
   <div class="page">
-    <div class="section-hero">
-      <div class="section-hero-content">
-        <span class="eyebrow">Who We Are</span>
-        <h1>Our Values</h1>
-        <p>We believe in excellence, heart, and the power of thoughtful details in every experience.</p>
+    <div class="values-intro">
+      <p class="eyebrow">Our Values</p>
+      <h1>What Guides Everything We Do</h1>
+      <p>The principles that shape our culture, our craft, and every experience we deliver for our clients.</p>
+    </div>
+
+    <div class="values-wrap">
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="value-index">01</span>
+          <span class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 3l-2 2"/><path d="M14 3l2 2"/><path d="M12 8v4"/><path d="M9.5 12.5l-1.5 1.5"/><path d="M14.5 12.5l1.5 1.5"/><path d="M7 14l-2 4h14l-2-4"/><path d="M8 14V9a3 3 0 0 1 8 0v5"/></svg>
+          </span>
+          <h3>Innovation &amp; Creativity</h3>
+          <p>We are constantly evolving, embracing new technologies and creative ideas to keep every project fresh, original, and ahead of the curve.</p>
+        </div>
+
+        <div class="value-card">
+          <span class="value-index">02</span>
+          <span class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2.5"/></svg>
+          </span>
+          <h3>Customer-Centricity</h3>
+          <p>Every decision we make is guided by the needs of our clients — their vision comes first, and our services are shaped around delivering it.</p>
+        </div>
+
+        <div class="value-card">
+          <span class="value-index">03</span>
+          <span class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.2-2.8 7.9-7 10-4.2-2.1-7-5.8-7-10V6l7-3z"/><path d="M9.5 12.5l1.7 1.7 3.3-3.7"/></svg>
+          </span>
+          <h3>Integrity &amp; Reliability</h3>
+          <p>We strive to deliver on every commitment with honesty and excellence, earning the trust of our clients through consistent, dependable work.</p>
+        </div>
+
+        <div class="value-card">
+          <span class="value-index">04</span>
+          <span class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3 5 5 .7-3.8 3.7.9 5.1-4.1-2.2-4.1 2.2.9-5.1L4 7.7 9 7z"/><path d="M8 16c1.2 1.5 2.7 2.3 4 2.3s2.8-.8 4-2.3"/></svg>
+          </span>
+          <h3>Passion &amp; Collaboration</h3>
+          <p>We bring genuine passion to every project and work closely as a team, combining our strengths to achieve the best possible results.</p>
+        </div>
       </div>
     </div>
-    <div class="top"><a href="media-services-website.html">← Back to home</a><span class="eyebrow">Who We Are</span></div>
-    <div class="card">
-      <p class="eyebrow">✦ Our Values</p>
-      <h1>Excellence, integrity, creativity, and respect guide every engagement.</h1>
-      <p>We believe that exceptional experiences are built through discipline, trust, and an unwavering attention to detail. We treat each client relationship with respect and each project as an opportunity to deliver something extraordinary.</p>
-      <p>Our values shape our workflow, our communication, and the quality of our final delivery, ensuring that every experience feels refined and intentional.</p>
-      <p><strong>✦ Excellence:</strong> We pursue excellence in every aspect of our work—from the initial concept through final execution. This means staying current with industry trends, investing in quality tools and techniques, and never settling for anything less than our best.</p>
-      <p><strong>✦ Integrity:</strong> We operate with honesty and transparency in all our client relationships. Your trust is paramount, and we honor it through clear communication, reliable delivery, and a genuine commitment to your vision and success.</p>
-      <p><strong>✦ Creativity:</strong> We believe that thoughtful creative solutions set experiences apart. Our team brings fresh ideas, artistic direction, and innovative approaches to every project, ensuring your moments are truly memorable.</p>
-      <p><strong>✦ Respect:</strong> We respect our clients, their budgets, their timelines, and their dreams. We listen carefully, collaborate openly, and approach every project with the dedication it deserves.</p>
-      <a class="btn" href="mailto:idaliastudioandevents@gmail.com">Contact Us</a>
-      <a class="btn secondary" href="contact.html">Book a Consultation</a>
-    </div>
   </div>
+
   <footer>
     <div class="footer-logo"><a href="media-services-website.html" class="logo">
       <img src="images/idalia_logo_cropped.png" alt="Idalia Studio and Events Ltd logo">
@@ -269,7 +269,15 @@
       </a>
     </div>
   </footer>
+
   <script>
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+      });
+    }
+
     const dropdown = document.querySelector('.nav-dropdown');
     const dropdownToggle = document.querySelector('.dropdown-toggle');
     const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
@@ -313,6 +321,7 @@
     if (dropdown && dropdownToggle) {
       dropdownToggle.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         dropdown.classList.toggle('open');
       });
       document.addEventListener('click', (e) => {
@@ -329,5 +338,3 @@
   </script>
 </body>
 </html>
-
-
