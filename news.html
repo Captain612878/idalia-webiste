@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -18,7 +18,7 @@
     h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3rem);font-weight:600;margin-bottom:1rem;color:var(--burgundy);}
     p{color:var(--muted);font-size:1rem;margin-bottom:1rem;}
     .section-hero{position:relative;min-height:100vh;border-radius:0;overflow:hidden;margin:0 0 2rem;display:flex;align-items:center;justify-content:flex-start;padding:7rem 1.5rem 3rem;background:linear-gradient(90deg,rgba(15,15,15,0.45),rgba(15,15,15,0.18));}
-    .section-hero::before{content:'';position:absolute;inset:0;background:url('bg/news and updates.png') center/cover no-repeat;transform:scale(1.03);z-index:-2;}
+    .section-hero::before{content:'';position:absolute;inset:0;background:url('bg/news and updates.jpeg') center/cover no-repeat;transform:scale(1.03);z-index:-2;}
     .section-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,15,15,0.35),rgba(15,15,15,0.1));z-index:-1;}
     .section-hero-content{position:relative;z-index:1;padding:clamp(1.25rem,4vw,3rem);max-width:760px;margin-left:auto;margin-right:auto;width:min(100%,1000px);}
     .section-hero-content h1{color:var(--white);margin-bottom:.75rem;}
@@ -38,7 +38,7 @@
     .news-card p{margin-bottom:1rem;}
     .news-card a{color:var(--burgundy-deep);font-weight:600;}
 
-    /* ── NAV (matched to homepage) ── */
+    
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       padding: 0.9rem 4rem;
@@ -76,7 +76,7 @@
     .nav-links a:hover { color: var(--gold-soft); }
     .nav-links a.active, .nav-links .dropdown-toggle.active { color: var(--gold-soft); }
 
-    /* Desktop dropdown — click-only, no hover trigger */
+    
     .nav-dropdown { position: relative; }
     .dropdown-toggle { display: inline-flex; align-items: center; gap: 0.35rem; }
     .dropdown-icon {
@@ -90,14 +90,14 @@
       border: 1px solid rgba(111,36,52,0.16); box-shadow: 0 16px 40px rgba(15,15,15,0.08);
       padding: 0.7rem 0; opacity: 0; pointer-events: none; transition: all 0.25s ease; z-index: 1100;
     }
-    /* Click-only: open class controls visibility, not :hover */
+    
     .nav-dropdown.open .dropdown-menu { opacity: 1; pointer-events: auto; }
     .dropdown-menu a { display: block; padding: 0.75rem 1rem; color: var(--dark); font-size: 0.75rem; font-weight: 500; text-transform: none; letter-spacing: 0.05em; white-space: nowrap; }
     .dropdown-menu a:hover { background: rgba(199,154,45,0.08); color: var(--gold-dark); }
     .nav-cta { padding:.6rem 1.6rem; border:1px solid var(--gold-soft); color:var(--cream); font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; text-decoration:none; transition:all .3s; }
     .nav-cta:hover { background:var(--gold-soft); color:var(--deep-navy); }
 
-    /* ── HAMBURGER ── */
+    
     .hamburger {
       display: none;
       flex-direction: column;
@@ -128,7 +128,7 @@
     .hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
     .hamburger.active span { background: var(--gold-soft); }
 
-    /* ── MOBILE DRAWER (matched to homepage: floating, left-aligned, fluid width) ── */
+    
     .mobile-menu {
       display: none;
       position: fixed;
@@ -195,17 +195,26 @@
     }
     .mobile-cta:hover { background: var(--gold-soft); color: var(--deep-navy); }
 
-    /* ── FOOTER ── */
-    footer{background:var(--deep-navy);padding:2.5rem 3rem;border-top:1px solid rgba(242,214,143,0.2);display:flex;justify-content:space-between;align-items:center;gap:1.5rem;}
+    
+    footer{
+      background:var(--deep-navy);
+      padding:1.5rem 1rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+      flex-wrap:wrap;
+      margin-top:4rem;
+    }
     .footer-logo img{height:50px;width:auto;display:block;}
-    .footer-copy{font-size:.75rem;color:rgba(247,239,228,0.8);}
-    .footer-social{display:flex;gap:1rem;}
-    .footer-social a{width:36px;height:36px;border:1px solid rgba(247,239,228,0.35);display:flex;align-items:center;justify-content:center;transition:all .3s;text-decoration:none;}
+    .footer-copy{font-size:.72rem;color:rgba(247,239,228,0.8);}
+    .footer-social{display:flex;gap:.65rem;flex-wrap:wrap;justify-content:center;}
+    .footer-social a{width:32px;height:32px;border:1px solid rgba(247,239,228,0.35);display:flex;align-items:center;justify-content:center;}
     .footer-social a:hover{border-color:var(--gold-soft);}
-    .footer-social a svg{width:16px;height:16px;stroke:var(--cream-2);fill:none;stroke-width:1.5;transition:stroke .3s;}
+    .footer-social a svg{width:14px;height:14px;stroke:var(--cream-2);fill:none;stroke-width:1.5;}
     .footer-social a:hover svg{stroke:var(--gold-soft);}
 
-    /* ── RESPONSIVE ── */
+    
     @media (max-width: 1100px) {
       nav { padding: 1rem 2rem; }
       nav.scrolled { padding: 1rem 2rem; }
@@ -217,7 +226,9 @@
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; margin-left: auto; }
       .mobile-menu { display: block; }
-      footer{padding:2rem 1.5rem;flex-direction:column;align-items:flex-start;}
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
+      .footer-copy { max-width: 100%; }
+      .footer-social { justify-content: center; }
     }
     @media (max-width: 600px){
       .top{flex-direction:column;align-items:flex-start;}
@@ -230,7 +241,7 @@
 </head>
 <body>
 
-  <!-- MOBILE OVERLAY + DRAWER -->
+  
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
     <ul>
       <li>
@@ -250,7 +261,7 @@
     </ul>
   </div>
 
-  <!-- NAVIGATION -->
+  
   <nav id="navbar">
     <a href="media-services-website.html" class="logo">
       <img src="images/idalia_logo_cropped.png" alt="Idalia Studio and Events Ltd logo">
@@ -282,7 +293,7 @@
         <p>Here you'll find updates about our services, client highlights, and all news and events posted from Idalia Studio and Events.</p>
       </div>
     </div>
-    <div class="top"><a href="media-services-website.html">← Back to Home</a><span class="eyebrow">News & Updates</span></div>
+    <div class="top"><a href="media-services-website.html"><span class="back-icon" aria-hidden="true">←</span> Back to Home</a><span class="eyebrow">News & Updates</span></div>
     <p>All news and events will be posted here.</p>
     <div class="news-list">
       <article class="news-card">
@@ -293,8 +304,7 @@
   </div>
 
   <footer>
-    <div class="footer-logo"><a href="media-services-website.html" class="logo"><img src="images/idalia_logo_cropped.png" alt="Idalia Studio and Events Ltd logo"></a></div>
-    <p class="footer-copy">© 2026 Idalia Studio And Events Ltd. All rights reserved. Nairobi, Kenya.</p>
+    <p class="footer-copy">&copy; 2026 Idalia Studio And Events Ltd. All rights reserved. Nairobi, Kenya.</p>
     <div class="footer-social">
       <a href="https://www.instagram.com/idaliastudio_events/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
         <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -312,13 +322,13 @@
   </footer>
 
   <script>
-    // ── NAVBAR SCROLL ──
+
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // ── DESKTOP DROPDOWN (click-only, no hover) ──
+
     const desktopDropdown = document.getElementById('desktopDropdown');
     const desktopToggle = desktopDropdown.querySelector('.dropdown-toggle');
     const desktopDropdownLinks = desktopDropdown.querySelectorAll('.dropdown-menu a');
@@ -333,7 +343,7 @@
     });
     desktopDropdownLinks.forEach(link => link.addEventListener('click', () => desktopDropdown.classList.remove('open')));
 
-    // ── MOBILE HAMBURGER + DRAWER ──
+
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const whoToggle = document.getElementById('whoWeAreToggle');
@@ -363,7 +373,7 @@
       });
     }
 
-    // ── MOBILE "WHO WE ARE" SUB-DROPDOWN (click-only) ──
+
     if (whoToggle && whoSub) {
       whoToggle.addEventListener('click', (e) => {
         e.stopPropagation();

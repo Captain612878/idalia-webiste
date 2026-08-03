@@ -129,12 +129,12 @@
     .whatsapp-btn{ bottom: 50px; }
   }
 
-  /* Scrollbar */
+  
   ::-webkit-scrollbar { width: 3px; }
   ::-webkit-scrollbar-track { background: var(--light); }
   ::-webkit-scrollbar-thumb { background: var(--gold-dim); }
 
-  /* ── NAV ── */
+  
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
     padding: 0.9rem 4rem;
@@ -154,7 +154,7 @@
   }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 
-  /* ── HAMBURGER ── */
+  
   .hamburger {
     display: none;
     flex-direction: column;
@@ -185,7 +185,7 @@
   .hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
   .hamburger.active span { background: var(--gold-soft); }
 
-  /* ── MOBILE MENU ── */
+  
   .mobile-menu {
     display: none;
     position: fixed;
@@ -222,7 +222,7 @@
   .mobile-cta { display: block; margin-top: 0.7rem; padding: 0.45rem 0.9rem; border: 1px solid var(--gold-soft); color: var(--cream); font-size: 0.66rem; letter-spacing: 0.13em; text-transform: uppercase; text-align: center; border-radius: 4px; transition: all 0.25s; }
   .mobile-cta:hover { background: var(--gold-soft); color: var(--deep-navy); }
 
-  /* Desktop nav styles */
+  
   .nav-dropdown { position: relative; }
   .dropdown-toggle { display: inline-flex; align-items: center; gap: 0.35rem; }
   .dropdown-icon {
@@ -232,7 +232,7 @@
     transform: translateY(-1px);
     transition: transform 0.25s ease;
   }
-  /* Click-only: no hover trigger on dropdown */
+  
   .nav-dropdown.open .dropdown-icon { transform: translateY(-1px) rotate(180deg); }
 
   .nav-links a {
@@ -260,7 +260,7 @@
     transition: all 0.25s ease;
     z-index: 1100;
   }
-  /* Click-only: open class controls visibility, not :hover */
+  
   .nav-dropdown.open .dropdown-menu {
     opacity: 1;
     pointer-events: auto;
@@ -298,7 +298,7 @@
   }
   .nav-cta:hover { background: var(--gold-soft); color: var(--deep-navy); }
 
-  /* HERO */
+  
   #hero {
     height: 100vh;
     position: relative;
@@ -377,8 +377,8 @@
   }
   .btn-primary {
     padding: 1rem 2.5rem;
-    background: #FCCB17;
-    color: var(--dark);
+    background: var(--burgundy);
+    color: var(--cream-2);
     font-size: 0.8rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -386,9 +386,10 @@
     font-weight: 600;
     transition: all 0.3s;
     display: inline-block;
+    border: 1px solid rgba(242,214,143,0.35);
     box-shadow: 0 10px 24px rgba(0,0,0,0.16);
   }
-  .btn-primary:hover { background: #FCCB17; color: var(--burgundy-deep); transform: translateY(-2px); }
+  .btn-primary:hover { background: var(--gold); color: var(--burgundy-deep); transform: translateY(-2px); }
   .btn-outline {
     padding: 1rem 2.5rem;
     border: 1px solid rgba(255,255,255,0.38);
@@ -422,7 +423,7 @@
     100%{transform:scaleY(0);transform-origin:bottom;}
   }
 
-  /* MARQUEE */
+  
   .marquee-section {
     padding: 1.2rem 0;
     background: linear-gradient(90deg, #FCCB17 0%, #FCCB17 100%);
@@ -447,7 +448,7 @@
   .marquee-dot { color: var(--dark-4); }
   @keyframes marquee { 0%{transform:translateX(0);} 100%{transform:translateX(-40%);} }
 
-  /* SECTIONS */
+  
   section { padding: 5rem 3rem; }
   @media (max-width: 768px) { section { padding: 4rem 1.5rem; } }
   @media (max-width: 480px) { section { padding: 3rem 1rem; } }
@@ -476,7 +477,7 @@
   }
   .section-title em { font-style: normal; color: var(--accent); font-weight: 700; }
 
-  /* ABOUT */
+  
   #about { background: linear-gradient(180deg, var(--dark-3) 0%, var(--white) 100%); }
   .about-grid {
     display: grid;
@@ -515,7 +516,7 @@
   }
   .stat-label { font-size: 0.75rem; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
 
-  /* SERVICES */
+  
   #services { background: linear-gradient(180deg, var(--white) 0%, var(--dark-3) 100%); }
   .services-intro { max-width: 600px; margin-bottom: 3rem; }
   .services-grid {
@@ -582,7 +583,7 @@
   .book-btn:hover { background: var(--brand); color: var(--light); border-color: var(--brand); }
   .wa-icon { width: 16px; height: 16px; }
 
-  /* PROCESS */
+  
   #process { background: linear-gradient(180deg, var(--dark-2) 0%, var(--white) 100%); }
   .process-steps {
     display: grid; grid-template-columns: repeat(4, 1fr);
@@ -608,171 +609,6 @@
   .step h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; }
   .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.8; font-weight: 300; }
 
-  /* GALLERY GRID */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.3rem;
-    max-width: 1160px; margin: 0 auto;
-    align-items: stretch;
-  }
-  .gallery-item {
-    position: relative; border-radius: 24px; overflow: hidden;
-    cursor: pointer;
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 1rem; align-items: stretch;
-    text-decoration: none;
-    min-height: 340px; padding: 1.1rem;
-    background: rgba(255,255,255,0.96);
-    border: 1px solid rgba(111, 36, 52, 0.14);
-    box-shadow: 0 16px 40px rgba(20,20,20,0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  }
-  .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(20,20,20,0.1); border-color: rgba(201,168,76,0.45); }
-  .gallery-placeholder {
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
-    position: relative;
-    transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
-    will-change: transform; border-radius: 18px;
-  }
-  .gallery-item:hover .gallery-placeholder { transform: scale(1.03); }
-  .gallery-content {
-    display: flex; flex-direction: column; gap: 0.9rem;
-    z-index: 2; position: relative;
-    padding: 0.2rem 0.1rem; justify-content: center;
-  }
-  .gallery-item-badge {
-    display: inline-flex; align-self: flex-start;
-    padding: 0.38rem 0.7rem; border-radius: 999px;
-    background: rgba(201,168,76,0.14); color: var(--gold-dim);
-    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700;
-  }
-  .gallery-item-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.7rem; font-weight: 400; color: var(--burgundy); margin: 0; line-height: 1.2;
-  }
-  .gallery-item-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.7; font-weight: 300; margin: 0; }
-
-  .video-showcase {
-    max-width: 1160px; margin: 1.4rem auto 0;
-    display: grid; grid-template-columns: 1.1fr 0.9fr;
-    gap: 1rem; padding: 1rem;
-    background: linear-gradient(135deg, rgba(255,255,255,0.96) 0%, rgba(247,239,228,0.9) 100%);
-    border: 1px solid rgba(111, 36, 52, 0.14);
-    border-radius: 24px;
-    box-shadow: 0 16px 40px rgba(20,20,20,0.06);
-  }
-  .video-showcase-media {
-    position: relative; border-radius: 20px; overflow: hidden;
-    min-height: 280px; aspect-ratio: 16 / 9;
-    height: 100%; object-fit: cover; display: block;
-  }
-  .video-play-btn {
-    position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    background: rgba(15, 35, 68, 0.2); transition: background 0.25s ease;
-  }
-  .video-play-btn:hover { background: rgba(15, 35, 68, 0.35); }
-  .video-play-btn span {
-    width: 66px; height: 66px; border-radius: 50%;
-    background: rgba(255,255,255,0.9); color: var(--burgundy);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.35rem; box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-  }
-  .video-showcase-copy { display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding: 0.3rem 0.2rem 0.2rem 0.1rem; }
-  .video-showcase-copy h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--burgundy); font-weight: 400; line-height: 1.2; }
-  .video-showcase-copy p { font-size: 0.97rem; color: var(--muted); line-height: 1.8; font-weight: 300; }
-  .video-link {
-    display: inline-flex; align-self: flex-start;
-    padding: 0.8rem 1.15rem;
-    border: 1px solid rgba(111, 36, 52, 0.2); border-radius: 999px;
-    color: var(--burgundy); text-decoration: none;
-    font-size: 0.9rem; font-weight: 600; letter-spacing: 0.04em;
-    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
-  }
-  .video-link:hover { background: var(--burgundy); color: var(--white); transform: translateY(-2px); }
-
-  /* CAROUSEL */
-  .gallery-carousel { position: relative; }
-  .carousel-wrapper { position: relative; width: 100%; border-radius: 6px; overflow: hidden; cursor: pointer; }
-  .carousel-container {
-    position: relative; width: 100%; height: 280px;
-    background: linear-gradient(135deg, #fff7e8 0%, #f3e1af 100%);
-    justify-content: center;
-  }
-  .carousel-autoplay-indicator { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: rgba(201, 168, 76, 0.2); z-index: 5; border-radius: 0 0 6px 0; }
-  .carousel-autoplay-progress { height: 100%; background: var(--gold); animation: autoplayProgress 4s linear forwards; border-radius: 0 0 6px 0; }
-  @keyframes autoplayProgress { from{width:0%;} to{width:100%;} }
-  .carousel-container:hover .carousel-autoplay-progress { animation-play-state: paused; }
-  .carousel-img {
-    width: 100%; height: 100%; object-fit: contain; border-radius: 6px;
-    transition: opacity 0.3s ease; cursor: pointer;
-    background: linear-gradient(135deg, #fff7e8 0%, #f3e1af 100%); padding: 10px;
-  }
-  .carousel-btn {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    background: rgba(201, 168, 76, 0.2); color: var(--gold);
-    border: 1.5px solid rgba(201, 168, 76, 0.5);
-    padding: 10px 16px; font-size: 0.9rem; cursor: pointer;
-    border-radius: 4px; transition: all 0.3s ease;
-    backdrop-filter: blur(6px); font-family: 'DM Sans', sans-serif; font-weight: 500; z-index: 10;
-  }
-  .carousel-btn:hover { background: rgba(201, 168, 76, 0.4); border-color: var(--gold); }
-  .carousel-prev { left: 12px; }
-  .carousel-next { right: 12px; }
-  .carousel-counter { position: absolute; bottom: 12px; right: 12px; background: rgba(255,255,255,0.8); color: var(--gold-dim); backdrop-filter: blur(4px); }
-
-  @media (max-width: 768px) {
-    .gallery-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .gallery-item { display: flex; flex-direction: column; gap: 1rem; min-height: auto; }
-    .gallery-placeholder { min-height: 200px; }
-    .gallery-item:active .gallery-placeholder { transform: scale(1.02); }
-    .gallery-item-title { font-size: 1.5rem; }
-    .gallery-item-desc { font-size: 0.9rem; }
-    .carousel-container { height: 220px; }
-    .carousel-btn { padding: 8px 12px; font-size: 0.8rem; }
-    .carousel-prev { left: 8px; }
-    .carousel-next { right: 8px; }
-  }
-  @media (max-width: 480px) {
-    .gallery-grid { gap: 1.2rem; }
-    .gallery-item { gap: 0.8rem; }
-    .gallery-placeholder { min-height: 180px; }
-    .gallery-item-title { font-size: 1.3rem; }
-    .gallery-item-desc { font-size: 0.85rem; line-height: 1.6; }
-    .carousel-container { height: 180px; }
-    .carousel-btn { padding: 6px 10px; font-size: 0.75rem; }
-    .carousel-counter { font-size: 0.75rem; padding: 4px 8px; }
-  }
-
-  .about-photo { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; display:block; }
-  .gallery-placeholder-label { display:none; }
-  .gallery-overlay { display:none; }
-
-  /* YT BADGE */
-  .yt-badge {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 64px; height: 44px; background: #ff0000; border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    z-index: 3; transition: transform 0.25s, box-shadow 0.25s;
-    box-shadow: 0 4px 24px rgba(255,0,0,0.5);
-  }
-  .gallery-item:hover .yt-badge { transform: translate(-50%, -50%) scale(1.12); box-shadow: 0 6px 32px rgba(255,0,0,0.7); }
-
-  /* LIGHTBOX ICON */
-  .lb-icon {
-    display: none; position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%) scale(0.8); opacity: 0; z-index: 3;
-    width: 52px; height: 52px;
-    background: rgba(201,168,76,0.18); border: 1.5px solid rgba(201,168,76,0.55);
-    border-radius: 50%; align-items: center; justify-content: center;
-    backdrop-filter: blur(6px); transition: opacity 0.3s, transform 0.3s;
-  }
-  .gallery-item:hover .lb-icon { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-
-  /* LIGHTBOX */
   .lightbox {
     position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 1000;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -816,46 +652,9 @@
   .lb-thumb-inner { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-family:'Courier New',monospace; font-size:0.55rem; letter-spacing:0.1em; color:rgba(255,255,255,0.5); text-align:center; padding:4px; }
   .lb-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
 
-  /* CAROUSEL ZOOM MODAL */
-  .carousel-zoom-modal {
-    position: fixed; inset: 0; background: rgba(0,0,0,0.98); z-index: 2000;
-    display: flex; align-items: center; justify-content: center;
-    animation: zoomFadeIn 0.3s ease; backdrop-filter: blur(4px);
-  }
-  @keyframes zoomFadeIn { from{opacity:0;} to{opacity:1;} }
-  .carousel-zoom-content { position: relative; width: 90vw; max-width: 900px; height: 80vh; max-height: 600px; display: flex; align-items: center; justify-content: center; }
-  .carousel-zoom-img { width: 100%; height: 100%; object-fit: contain; border-radius: 8px; animation: zoomImageIn 0.4s ease; }
-  @keyframes zoomImageIn { from{transform:scale(0.9);opacity:0;} to{transform:scale(1);opacity:1;} }
-  .carousel-zoom-close {
-    position: absolute; top: -40px; right: 0;
-    background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); color: var(--gold);
-    width: 36px; height: 36px; border-radius: 50%; font-size: 24px; cursor: pointer;
-    display: flex; align-items: center; justify-content: center; transition: all 0.3s; z-index: 2001;
-  }
-  .carousel-zoom-close:hover { background: rgba(201,168,76,0.2); border-color: var(--gold); transform: scale(1.1); }
-  .carousel-zoom-prev, .carousel-zoom-next {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    background: rgba(0,0,0,0.6); border: 1px solid rgba(201,168,76,0.3); color: var(--gold);
-    width: 48px; height: 48px; border-radius: 50%; font-size: 24px; cursor: pointer;
-    display: flex; align-items: center; justify-content: center; transition: all 0.3s; z-index: 2001;
-  }
-  .carousel-zoom-prev { left: -60px; }
-  .carousel-zoom-next { right: -60px; }
-  .carousel-zoom-prev:hover, .carousel-zoom-next:hover { background: rgba(201,168,76,0.2); border-color: var(--gold); transform: translateY(-50%) scale(1.15); }
-  .carousel-zoom-counter {
-    position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%);
-    color: var(--gold); font-size: 14px; font-family: 'Courier New', monospace; letter-spacing: 0.1em;
-    background: rgba(0,0,0,0.6); padding: 6px 12px; border-radius: 4px; border: 1px solid rgba(201,168,76,0.3);
-  }
-  @media (max-width: 768px) {
-    .carousel-zoom-content { width: 95vw; height: 70vh; }
-    .carousel-zoom-prev, .carousel-zoom-next { width: 44px; height: 44px; font-size: 20px; }
-    .carousel-zoom-prev { left: 10px; }
-    .carousel-zoom-next { right: 10px; }
-    .carousel-zoom-close { top: 10px; right: 10px; }
-  }
+  
 
-  /* TESTIMONIALS */
+  
   #testimonials { background: linear-gradient(180deg, var(--dark-3) 0%, var(--white) 100%); }
   .testi-grid {
     display: grid; grid-template-columns: repeat(3, 1fr);
@@ -877,37 +676,12 @@
   .testi-role { font-size: 0.75rem; color: var(--muted); }
   .stars { color: var(--gold); font-size: 0.8rem; margin-bottom: 1rem; letter-spacing: 0.1em; }
 
-  /* WHO WE ARE */
-  #about-home {
-    background: linear-gradient(180deg, var(--white) 0%, var(--light) 100%);
-    border-top: 1px solid rgba(201,168,76,0.12);
-  }
-  .about-home-shell {
-    max-width: 1200px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr;
-    gap: 2rem; align-items: start;
-  }
-  .about-home-copy p { color: var(--muted); line-height: 1.9; margin-bottom: 1rem; }
-  .about-home-card {
-    background: rgba(255,255,255,0.92); border: 1px solid rgba(201,168,76,0.16);
-    border-radius: 16px; padding: 2rem; box-shadow: 0 10px 30px rgba(20,20,20,0.04);
-  }
-  .about-home-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; margin-bottom: 0.7rem; color: var(--dark); }
-  .about-home-card p { color: var(--muted); margin: 0; line-height: 1.8; }
-
-  /* CREW IN ACTION */
-  #crew-in-action { background: linear-gradient(180deg, var(--light) 0%, var(--white) 100%); border-top: 1px solid rgba(201,168,76,0.12); }
-
-  /* PARTNERS */
-  #partners { background: linear-gradient(180deg, var(--white) 0%, var(--light) 100%); border-top: 1px solid rgba(201,168,76,0.12); }
-  .partners-shell { max-width: 1200px; margin: 0 auto; text-align: center; }
-  .partners-copy { max-width: 760px; margin: 1.2rem auto 2.4rem; color: var(--muted); font-size: 1rem; line-height: 1.9; }
   .partners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2rem; }
   .partner-card { background: rgba(255,255,255,0.9); border: 1px solid rgba(201,168,76,0.16); border-radius: 16px; padding: 2rem 1.4rem; box-shadow: 0 10px 30px rgba(20,20,20,0.04); }
   .partner-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 0.7rem; color: var(--dark); }
   .partner-card p { color: var(--muted); margin: 0; line-height: 1.8; }
 
-  /* CONTACT */
+  
   #contact { background: var(--white); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; max-width: 1200px; margin: 0 auto; align-items: start; }
   .contact-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; margin-bottom: 2rem; }
@@ -934,7 +708,7 @@
   .booking-submit { padding: 1rem 1.75rem; background: var(--gold); color: var(--dark); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; align-self: start; min-height: 48px; }
   .booking-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
 
-  /* CTA */
+  
   #cta-section { background: linear-gradient(135deg, var(--dark-2) 0%, var(--white) 100%); padding: 5rem 3rem; text-align: center; position: relative; overflow: hidden; }
   @media (max-width: 768px) { #cta-section { padding: 4rem 1.5rem; } }
   @media (max-width: 480px) { #cta-section { padding: 3rem 1rem; } }
@@ -945,9 +719,9 @@
   .wa-cta-btn:hover { background: #20b857; transform: translateY(-3px); box-shadow: 0 15px 40px rgba(37,211,102,0.25); }
   .wa-cta-btn svg { width: 22px; height: 22px; }
 
-  /* FOOTER */
-  footer { background: var(--deep-navy); padding: 2.5rem 3rem; padding-right: 110px; border-top: 1px solid rgba(242,214,143,0.2); display: flex; justify-content: space-between; align-items: center; gap: 1.25rem; }
-  @media(max-width:900px){ footer { padding: 2rem 1.25rem; padding-right: 1.25rem; flex-wrap: wrap; justify-content: center; text-align: center; } }
+  
+  footer { background: var(--deep-navy); padding: 1rem 1.25rem; padding-right: 1.25rem; border-top: 1px solid rgba(242,214,143,0.2); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  @media(max-width:900px){ footer { padding: 1rem 0.9rem; padding-right: 0.9rem; flex-wrap: wrap; justify-content: center; text-align: center; } }
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; letter-spacing: 0.2em; color: var(--cream); }
   .footer-logo span { color: var(--gold-soft); }
   .footer-copy { font-size: 0.75rem; color: rgba(247,239,228,0.8); line-height: 1.7; max-width: 420px; }
@@ -957,7 +731,7 @@
   .footer-social a svg { width: 16px; height: 16px; stroke: var(--cream-2); fill: none; stroke-width: 1.5; transition: stroke 0.3s; }
   .footer-social a:hover svg { stroke: var(--gold-soft); }
 
-  /* ANIMATIONS */
+  
   @keyframes fadeUp { from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
   @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
   .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
@@ -965,11 +739,11 @@
   .reveal-delay-1{transition-delay:0.15s;} .reveal-delay-2{transition-delay:0.3s;} .reveal-delay-3{transition-delay:0.45s;}
   .reveal-delay-4{transition-delay:0.6s;} .reveal-delay-5{transition-delay:0.75s;} .reveal-delay-6{transition-delay:0.9s;}
 
-  /* PARTICLES */
+  
   .particle { position: fixed; width: 2px; height: 2px; background: var(--gold); border-radius: 50%; pointer-events: none; opacity: 0; animation: floatParticle 12s ease-in-out infinite; }
   @keyframes floatParticle { 0%{transform:translateY(100vh) translateX(0);opacity:0;} 10%{opacity:0.4;} 90%{opacity:0.4;} 100%{transform:translateY(-10vh) translateX(40px);opacity:0;} }
 
-  /* ── DESKTOP RESPONSIVE ── */
+  
   @media (max-width: 1100px) {
     nav { padding: 1rem 2rem; }
     nav.scrolled { padding: 1rem 2rem; }
@@ -977,7 +751,7 @@
     .hero-content { padding: 0 1.5rem; }
   }
 
-  /* ── MOBILE NAV (≤900px): show hamburger, hide desktop links ── */
+  
   @media (max-width: 900px) {
     nav { padding: 1.2rem 1.5rem; align-items: center; }
     nav.scrolled { padding: 0.8rem 1.5rem; }
@@ -991,11 +765,10 @@
     .services-grid { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     .process-steps::before { display: none; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-    .gallery-item { grid-template-columns: 1fr; }
     .testi-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; align-items: center; }
+    .footer-copy { max-width: 100%; }
     .footer-social { justify-content: center; }
     .hero-title { font-size: clamp(2rem, 7vw, 3rem); }
     .hero-subtitle { max-width: 480px; font-size: 0.95rem; }
@@ -1010,15 +783,9 @@
     .hero-content { padding: 0 1.25rem; }
     .hero-title { font-size: clamp(1.9rem, 7vw, 2.8rem); }
     .hero-subtitle { font-size: 0.9rem; line-height: 1.7; padding: 0 0.25rem; }
-    .video-showcase { grid-template-columns: 1fr; width: 100%; max-width: 100%; overflow: hidden; padding: 1rem; box-sizing: border-box; }
-    .video-showcase-media { width: 100%; max-width: 100%; min-height: 220px; box-sizing: border-box; overflow: hidden; }
-    .video-showcase-media img, .video-play-btn { width: 100%; max-width: 100%; height: 100%; object-fit: cover; display: block; box-sizing: border-box; }
-    .video-showcase-copy { width: 100%; max-width: 100%; box-sizing: border-box; }
   }
 
   @media (max-width: 600px) {
-    .video-showcase { padding: 0.85rem; }
-    .video-showcase-media { min-height: 200px; }
     .marquee-section { padding: 1rem 0; }
     .marquee-track { gap: 0.7rem 1rem; width: max-content; max-width: 100%; min-width: 100%; flex-wrap: nowrap; justify-content: flex-start; animation: marquee 16s linear infinite; transform: none; }
     .marquee-track span { font-size: 0.65rem; white-space: nowrap; }
@@ -1033,9 +800,6 @@
     .section-title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
     .stats-row { flex-direction: column; gap: 1rem; }
     .process-steps { grid-template-columns: 1fr; gap: 1.5rem; }
-    .gallery-grid { grid-template-columns: 1fr; }
-    .gallery-item { min-height: auto; display: flex; flex-direction: column; gap: 1rem; padding: 0.9rem; }
-    .gallery-item-title { font-size: 1.45rem; }
   }
 
   @media (max-width: 480px) {
@@ -1051,7 +815,7 @@
     .service-card, .testimonial-card, .contact-card, .process-card, .stat-card, .gallery-card, .news-card { padding: 1.25rem; }
     .cta-title { font-size: 1.65rem; line-height: 1.3; }
     .wa-cta-btn { width: 100%; justify-content: center; }
-    footer { padding: 2rem 1rem; }
+    footer { padding: 1rem 1rem; }
   }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -1064,7 +828,7 @@
   </svg>
 </a>
 
-<!-- Particles -->
+
 <div class="particle" style="left:10%;animation-delay:0s;animation-duration:14s;"></div>
 <div class="particle" style="left:25%;animation-delay:3s;animation-duration:11s;"></div>
 <div class="particle" style="left:40%;animation-delay:6s;animation-duration:16s;"></div>
@@ -1072,7 +836,7 @@
 <div class="particle" style="left:75%;animation-delay:4s;animation-duration:10s;"></div>
 <div class="particle" style="left:88%;animation-delay:7s;animation-duration:15s;"></div>
 
-<!-- MOBILE OVERLAY + DRAWER -->
+
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
     <ul>
       <li>
@@ -1092,7 +856,7 @@
     </ul>
   </div>
 
-<!-- NAVIGATION -->
+
 <nav id="navbar">
   <a href="media-services-website.html" class="logo">
     <img src="images/idalia_logo_cropped.png" alt="Idalia Studio and Events Ltd logo">
@@ -1116,16 +880,14 @@
   </button>
 </nav>
 
-<!-- HERO -->
+
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
     <h1 class="hero-title">Idalia Studio<br>And Events Ltd.</h1>
-    <p class="hero-subtitle">From planning to execution, we deliver exceptional events with professional photography, videography, technical support, and premium event solutions.</p>
     <div class="hero-actions">
       <a href="services.html" class="btn-primary">Explore Services</a>
-      <a href="#about-home" class="btn-outline">About Us</a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -1134,7 +896,7 @@
   </div>
 </section>
 
-<!-- MARQUEE -->
+
 <div class="marquee-section">
   <div class="marquee-track">
     <span>Photography</span><span class="marquee-dot">✦</span>
@@ -1152,99 +914,9 @@
   </div>
 </div>
 
-<!-- WHO WE ARE -->
-<section id="about-home">
-  <div class="about-home-shell">
-    <div class="about-home-copy reveal">
-      <div class="section-label">Who We Are</div>
-      <h2 class="section-title">Crafting <em>remarkable</em><br>experiences with intention</h2>
-      <p>Idalia Studio and Events is a creative and professional partner for clients who want their moments to feel elevated, polished, and deeply personal. We understand that every event tells a unique story, and our role is to ensure that story is captured and celebrated with excellence.</p>
-      <p>We blend event expertise, visual storytelling, and thoughtful production to deliver experiences that leave a lasting impression on your guests. From initial concept through final delivery, we bring meticulous attention to detail and a passion for creating moments that matter.</p>
-    </div>
-    <div class="about-home-card reveal reveal-delay-1">
-      <h3>Built for meaningful occasions</h3>
-      <p>From intimate gatherings to large-scale celebrations, we bring calm coordination, refined style, and dependable execution to every project.</p>
-    </div>
-  </div>
-</section>
 
-<!-- SELECTED WORKS -->
-<section id="crew-in-action">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="section-label reveal">Selected Works</div>
-    <h2 class="section-title reveal reveal-delay-1">A polished showcase<br>of our <em>signature moments</em></h2>
-    <p class="partners-copy reveal reveal-delay-2" style="text-align:center;">We create visuals that feel refined, cinematic, and true to the energy of every occasion. These highlights reflect the care, coordination, and storytelling that define our work. Each project is a testament to our commitment to excellence and our ability to transform your vision into reality across photography, videography, and full event production.</p>
-    <div class="gallery-grid" style="margin-top:3rem;">
-      <div class="gallery-item reveal">
-        <div class="gallery-content">
-          <div class="gallery-item-badge">Event Coverage</div>
-          <h3 class="gallery-item-title">Immersive event storytelling</h3>
-          <p class="gallery-item-desc">From intimate weddings to large-scale celebrations, our team captures the atmosphere, emotion, and movement of each moment with calm professionalism and a sharp editorial eye.</p>
-          <div id="eventCoverageGallery" class="gallery-carousel">
-            <div class="carousel-wrapper">
-              <div class="carousel-container">
-                <img src="images/portofolio/1.jpeg" alt="Event coverage" class="carousel-img">
-                <img src="images/portofolio/2.jpeg" alt="Event coverage" class="carousel-img">
-                <img src="images/portofolio/5.png" alt="Event coverage" class="carousel-img">
-                <img src="images/portofolio/4.png" alt="Event coverage" class="carousel-img">
-                
-                <button class="carousel-btn carousel-prev" type="button" aria-label="Previous">❮</button>
-                <button class="carousel-btn carousel-next" type="button" aria-label="Next">❯</button>
-                <div class="carousel-counter"><span class="counter-current">1</span> / <span class="counter-total">5</span></div>
-                <div class="carousel-autoplay-indicator"><div class="carousel-autoplay-progress"></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="gallery-item reveal reveal-delay-2">
-        <div class="gallery-content">
-          <div class="gallery-item-badge">Studio &amp; Production</div>
-          <h3 class="gallery-item-title">Refined visuals behind the scenes</h3>
-          <p class="gallery-item-desc">Our production work brings together thoughtful direction, polished styling, and technical precision to create content that feels elegant, modern, and ready for any platform.</p>
-          <div id="studioPhotosGallery" class="gallery-carousel">
-            <div class="carousel-wrapper">
-              <div class="carousel-container">
-                <img src="images/portofolio/a.jpeg" alt="Studio production" class="carousel-img">
-                <img src="images/portofolio/b.jpeg" alt="Studio production" class="carousel-img">
-                <img src="images/portofolio/c.jpeg" alt="Studio production" class="carousel-img">
-                <img src="images/portofolio/d.jpeg" alt="Studio production" class="carousel-img">
-                <img src="images/portofolio/e.jpeg" alt="Studio production" class="carousel-img">
-                <button class="carousel-btn carousel-prev" type="button" aria-label="Previous">❮</button>
-                <button class="carousel-btn carousel-next" type="button" aria-label="Next">❯</button>
-                <div class="carousel-counter"><span class="counter-current">1</span> / <span class="counter-total">5</span></div>
-                <div class="carousel-autoplay-indicator"><div class="carousel-autoplay-progress"></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="video-showcase reveal reveal-delay-3">
-      <div class="video-showcase-media">
-        <img src="images/youtube thumbnail.jpg" alt="Video showcase thumbnail">
-        <a class="video-play-btn" href="https://youtu.be/hJvLj4EMWKw?si=Aq0BNNF_Fj3am6Lv" target="_blank" rel="noopener noreferrer" aria-label="Watch featured reel">
-          <span>▶</span>
-        </a>
-      </div>
-      <div class="video-showcase-copy">
-        <div class="gallery-item-badge">Video Showcase</div>
-        <h3>Cinematic storytelling for your most important moments</h3>
-        <p>Explore our latest video works on YouTube, showcasing cinematic production quality, refined editing, and authentic storytelling. From weddings to corporate events, discover how we capture the emotion, energy, and essence of every celebration. Subscribe to see behind-the-scenes content and upcoming projects.</p>
-        <a class="video-link" href="https://youtu.be/hJvLj4EMWKw?si=Aq0BNNF_Fj3am6Lv" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">
-    <a href="media-services-website.html" class="logo">
-      <img src="images/idalia_logo_cropped.png" alt="Idalia Media Logo">
-    </a>
-  </div>
   <p class="footer-copy">© 2026 Idalia Studio And Events Ltd. All rights reserved. Nairobi, Kenya.</p>
   <div class="footer-social">
     <a href="https://www.instagram.com/idaliastudio_events/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -1281,18 +953,18 @@
 </div>
 
 <script>
-  // ── SCROLL REVEAL ──
+
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 
-  // ── NAVBAR SCROLL ──
+
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
 
-  // ── DESKTOP DROPDOWN (click-only, no hover) ──
+
   const desktopDropdown = document.getElementById('desktopDropdown');
   const desktopToggle = desktopDropdown.querySelector('.dropdown-toggle');
   const desktopDropdownLinks = desktopDropdown.querySelectorAll('.dropdown-menu a');
@@ -1307,7 +979,7 @@
   });
   desktopDropdownLinks.forEach(link => link.addEventListener('click', () => desktopDropdown.classList.remove('open')));
 
-  // ── MOBILE HAMBURGER + DRAWER ──
+
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   const whoToggle = document.getElementById('whoWeAreToggle');
@@ -1337,7 +1009,7 @@
     });
   }
 
-  // ── MOBILE "WHO WE ARE" SUB-DROPDOWN (click-only) ──
+
   if (whoToggle && whoSub) {
     whoToggle.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -1346,7 +1018,7 @@
     });
   }
 
-  // ── LIGHTBOX DATA ──
+
   const GALLERY_DATA = {
     corporate: {
       title: 'Corporate Portrait',
@@ -1444,7 +1116,6 @@
   }
   function updateCounter() { lbCounter.textContent = `${currentIndex + 1} / ${currentGallery.images.length}`; }
   function closeLightbox() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
-  document.querySelectorAll('.gallery-item[data-lb]').forEach(item => { item.addEventListener('click', () => openLightbox(item.dataset.lb)); });
   lbClose.addEventListener('click', closeLightbox);
   lbPrev.addEventListener('click', () => goTo(currentIndex - 1));
   lbNext.addEventListener('click', () => goTo(currentIndex + 1));
@@ -1456,7 +1127,7 @@
     if (e.key === 'ArrowRight') goTo(currentIndex + 1);
   });
 
-  // ── CAROUSEL ──
+
   const carouselState = {};
   function initCarousel(galleryId) {
     if (!carouselState[galleryId]) {
@@ -1501,55 +1172,7 @@
       state.autoplayInterval = setInterval(() => { changeCarousel(galleryId, 1); }, 4000);
     }
   }
-  function changeCarousel(galleryId, direction) {
-    const gallery = document.getElementById(galleryId);
-    const images = gallery.querySelectorAll('.carousel-img');
-    const counter = gallery.querySelector('.counter-current');
-    const state = carouselState[galleryId];
-    let nextIndex = state.currentIndex + direction;
-    if (nextIndex < 0) nextIndex = images.length - 1;
-    if (nextIndex >= images.length) nextIndex = 0;
-    images[state.currentIndex].style.display = 'none';
-    images[nextIndex].style.display = 'block';
-    state.currentIndex = nextIndex;
-    counter.textContent = nextIndex + 1;
-    const progressBar = gallery.querySelector('.carousel-autoplay-progress');
-    if (progressBar) { progressBar.style.animation = 'none'; setTimeout(() => { progressBar.style.animation = 'autoplayProgress 4s linear forwards'; }, 10); }
-    startAutoplay(galleryId);
-  }
-  function openCarouselZoom(galleryId) {
-    const gallery = document.getElementById(galleryId);
-    const images = gallery.querySelectorAll('.carousel-img');
-    const state = carouselState[galleryId];
-    const src = images[state.currentIndex].src;
-    if (!src || src === '') return;
-    const zoomModal = document.createElement('div');
-    zoomModal.className = 'carousel-zoom-modal';
-    zoomModal.innerHTML = `<div class="carousel-zoom-content"><button class="carousel-zoom-close" aria-label="Close zoom">✕</button><img src="${src}" alt="Zoomed image" class="carousel-zoom-img"><div class="carousel-zoom-counter">${state.currentIndex + 1} / ${images.length}</div><button class="carousel-zoom-prev" aria-label="Previous image">❮</button><button class="carousel-zoom-next" aria-label="Next image">❯</button></div>`;
-    document.body.appendChild(zoomModal);
-    document.body.style.overflow = 'hidden';
-    const closeBtn = zoomModal.querySelector('.carousel-zoom-close');
-    const prevBtn = zoomModal.querySelector('.carousel-zoom-prev');
-    const nextBtn = zoomModal.querySelector('.carousel-zoom-next');
-    const zoomImg = zoomModal.querySelector('.carousel-zoom-img');
-    const zoomCounter = zoomModal.querySelector('.carousel-zoom-counter');
-    function closeZoom() { zoomModal.remove(); document.body.style.overflow = ''; }
-    function updateZoomImage() { const imgSrc = images[state.currentIndex].src; if (imgSrc) { zoomImg.src = imgSrc; zoomCounter.textContent = `${state.currentIndex + 1} / ${images.length}`; } }
-    closeBtn.addEventListener('click', closeZoom);
-    zoomModal.addEventListener('click', e => { if (e.target === zoomModal) closeZoom(); });
-    prevBtn.addEventListener('click', () => { state.currentIndex--; if (state.currentIndex < 0) state.currentIndex = images.length - 1; updateZoomImage(); });
-    nextBtn.addEventListener('click', () => { state.currentIndex++; if (state.currentIndex >= images.length) state.currentIndex = 0; updateZoomImage(); });
-    document.addEventListener('keydown', function handleKey(e) {
-      if (!document.body.contains(zoomModal)) { document.removeEventListener('keydown', handleKey); return; }
-      if (e.key === 'Escape') closeZoom();
-      if (e.key === 'ArrowLeft') prevBtn.click();
-      if (e.key === 'ArrowRight') nextBtn.click();
-    });
-  }
-  document.addEventListener('DOMContentLoaded', () => {
-    initCarousel('eventCoverageGallery');
-    initCarousel('studioPhotosGallery');
-  });
+
 </script>
 </body>
 </html>

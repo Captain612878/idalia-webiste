@@ -14,10 +14,15 @@
     h1,h2{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--burgundy);} h1{font-size:clamp(2.2rem,4vw,3rem);margin-bottom:1rem;} h2{font-size:1.5rem;margin-bottom:.75rem;}
     p{color:var(--muted);font-size:1rem;margin-bottom:1rem;}
     .section-hero{position:relative;min-height:100vh;border-radius:0;overflow:hidden;margin:0 0 2rem;display:flex;align-items:center;justify-content:flex-start;padding:7rem 1.5rem 3rem;}
-    .section-hero::before{content:'';position:absolute;inset:0;background:url('bg/what we do bg.png') center/cover no-repeat;transform:scale(1.03);z-index:-2;}
+    .section-hero::before{content:'';position:absolute;inset:0;background:url('bg/what we do bg.jpeg') center/cover no-repeat;transform:scale(1.03);z-index:-2;}
     .section-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,15,15,0.86) 0%,rgba(15,15,15,0.72) 38%,rgba(15,15,15,0.12) 100%);z-index:-1;}
-    .section-hero-content{position:relative;z-index:1;padding:clamp(1rem,4vw,3rem);max-width:760px;margin-left:0;margin-right:auto;width:min(100%,1000px);text-align:left;}
-    .section-hero-content h1{color:var(--white);margin-bottom:.75rem;} .section-hero-content p{color:rgba(255,255,255,0.86);margin-bottom:0;} .section-hero-content .eyebrow{color:var(--gold-soft);}
+    .section-hero-content{position:relative;z-index:1;padding:clamp(1rem,4vw,3rem);max-width:760px;margin-left:0;margin-right:auto;width:min(100%,1000px);text-align:left;display:flex;align-items:flex-end;justify-content:flex-start;min-height:100%;}
+    .section-hero-content h1{color:var(--white);margin-bottom:.75rem;} .section-hero-content p{color:rgba(255,255,255,0.86);margin-bottom:0;} .section-hero-content .eyebrow{color:var(--gold-soft);} 
+    .scroll-indicator{display:flex;flex-direction:column;align-items:center;gap:.45rem;position:absolute;right:1.5rem;bottom:1.5rem;color:rgba(255,255,255,0.9);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;animation:floatDown 1.8s ease-in-out infinite;}
+    .scroll-indicator .mouse{width:26px;height:42px;border:1.5px solid rgba(255,255,255,0.7);border-radius:999px;position:relative;}
+    .scroll-indicator .mouse::before{content:'';position:absolute;top:8px;left:50%;transform:translateX(-50%);width:5px;height:10px;border-radius:999px;background:var(--gold-soft);animation:scrollDot 1.8s ease-in-out infinite;}
+    @keyframes floatDown{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+    @keyframes scrollDot{0%{opacity:0;transform:translateX(-50%) translateY(0);}40%{opacity:1;}100%{opacity:0;transform:translateX(-50%) translateY(14px);}}
     .card{background:var(--cream-2);border:1px solid rgba(111,36,52,0.16);padding:2rem;border-radius:16px;box-shadow:0 18px 40px rgba(15,15,15,0.05);margin-bottom:1.5rem;}
     .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;gap:1rem;max-width:1000px;width:min(100%,1000px);margin-left:auto;margin-right:auto;padding:0 1.5rem;}
     .top a{color:var(--gold);font-weight:600;}
@@ -28,8 +33,10 @@
     .service-card img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:1rem;}
     .service-card h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;margin-bottom:.5rem;color:var(--burgundy);}
     .service-card p{font-size:.9rem;margin:0;line-height:1.7;}
+    .video-embed{position:relative;width:100%;padding-top:56.25%;border-radius:16px;overflow:hidden;box-shadow:0 18px 40px rgba(15,15,15,0.08);border:1px solid rgba(111,36,52,0.12);background:#000;}
+    .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
 
-    /* ── NAV (matched to homepage) ── */
+    
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       padding: 0.9rem 4rem;
@@ -76,7 +83,7 @@
     .nav-links a.active, .nav-links .dropdown-toggle.active { color: var(--gold-soft); }
     .nav-links a.active::after, .nav-links .dropdown-toggle.active::after { transform: scaleX(1); transform-origin: left; }
 
-    /* Desktop dropdown — click-only, no hover trigger */
+    
     .nav-dropdown { position: relative; }
     .dropdown-toggle { display: inline-flex; align-items: center; gap: 0.35rem; }
     .dropdown-icon {
@@ -90,14 +97,14 @@
       border: 1px solid rgba(201,168,76,0.2); box-shadow: 0 16px 40px rgba(15,15,15,0.08);
       padding: 0.7rem 0; opacity: 0; pointer-events: none; transition: all 0.25s ease; z-index: 1100;
     }
-    /* Click-only: open class controls visibility, not :hover */
+    
     .nav-dropdown.open .dropdown-menu { opacity: 1; pointer-events: auto; }
     .dropdown-menu a { display: block; padding: 0.75rem 1rem; color: var(--dark); font-size: 0.75rem; font-weight: 500; text-transform: none; letter-spacing: 0.05em; }
     .dropdown-menu a:hover { background: rgba(201,168,76,0.08); color: var(--gold-dim); }
     .nav-cta { padding: 0.6rem 1.6rem; border: 1px solid var(--gold-soft); color: var(--cream); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.3s; }
     .nav-cta:hover { background: var(--gold-soft); color: var(--deep-navy); }
 
-    /* ── HAMBURGER ── */
+    
     .hamburger {
       display: none;
       flex-direction: column;
@@ -121,7 +128,7 @@
     .hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
     .hamburger.active span { background: var(--gold-soft); }
 
-    /* ── MOBILE DRAWER (matched to homepage: floating, left-aligned, fluid width) ── */
+    
     .mobile-menu {
       display: none;
       position: fixed;
@@ -184,12 +191,12 @@
     }
     .mobile-cta:hover { background: var(--gold-soft); color: var(--deep-navy); }
 
-    footer { background: var(--deep-navy); padding: 2.5rem 3rem; padding-right: 110px; border-top: 1px solid rgba(242,214,143,0.2); display: flex; justify-content: space-between; align-items: center; }
+    footer { background: var(--deep-navy); padding: 1rem 1.25rem; padding-right: 1.25rem; border-top: 1px solid rgba(242,214,143,0.2); display: flex; justify-content: space-between; align-items: center; }
     .footer-logo img{height:50px;width:auto;display:block;} .footer-copy{font-size:.75rem;color:rgba(247,239,228,0.8);} .footer-social{display:flex;gap:1rem;}
     .footer-social a{width:36px;height:36px;border:1px solid rgba(247,239,228,0.35);display:flex;align-items:center;justify-content:center;transition:all .3s;}
     .footer-social a svg{width:16px;height:16px;stroke:var(--cream-2);fill:none;stroke-width:1.5;}
 
-    /* ── RESPONSIVE ── */
+    
     @media (max-width: 1100px) {
       nav { padding: 1rem 2rem; }
       nav.scrolled { padding: 1rem 2rem; }
@@ -202,25 +209,120 @@
       .hamburger{display:flex; margin-left:auto;}
       .mobile-menu{display:block;}
       .services-grid{grid-template-columns:1fr 1fr;}
-      footer{padding:2rem 1.5rem;flex-direction:column;align-items:flex-start;}
+      footer{padding:2rem 1.5rem;flex-direction:column;align-items:center;text-align:center;gap:1.5rem;}
+      .footer-copy{max-width:100%;}
+      .footer-social{justify-content:center;}
     }
     @media (max-width:600px){
       .services-grid{grid-template-columns:1fr;}
       .top{flex-direction:column;align-items:flex-start;}
-      .section-hero{padding:6rem 1.25rem 2.5rem;min-height:auto;}
+      .section-hero{
+        min-height:58vh;
+        padding:5rem 1.25rem 1.75rem;
+        align-items:flex-end;
+      }
+      .section-hero::before{
+        background-position: center 12%;
+        background-size: cover;
+        transform: scale(1.03);
+      }
       .section-hero-content{padding:1rem 0.5rem;}
       .section-hero-content h1{font-size:clamp(1.6rem,6vw,2.2rem);}
       .section-hero-content p{font-size:0.92rem;}
+      .scroll-indicator{display:none;}
     }
     @media (max-width: 480px) {
       nav { padding: 0.9rem 1rem; }
       .logo img { height: 40px; }
     }
+
+    
+    .gallery-carousel { position: relative; }
+    .carousel-wrapper { position: relative; width: 100%; border-radius: 6px; overflow: hidden; cursor: pointer; }
+    .carousel-container {
+      position: relative; width: 100%; height: 280px;
+      background: linear-gradient(135deg, #fff7e8 0%, #f3e1af 100%);
+      justify-content: center;
+    }
+    .carousel-autoplay-indicator { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: rgba(201, 168, 76, 0.2); z-index: 5; border-radius: 0 0 6px 0; }
+    .carousel-autoplay-progress { height: 100%; background: var(--gold); animation: autoplayProgress 4s linear forwards; border-radius: 0 0 6px 0; }
+    @keyframes autoplayProgress { from{width:0%;} to{width:100%;} }
+    .carousel-container:hover .carousel-autoplay-progress { animation-play-state: paused; }
+    .carousel-img {
+      width: 100%; height: 100%; object-fit: contain; border-radius: 6px;
+      transition: opacity 0.3s ease; cursor: pointer;
+      background: linear-gradient(135deg, #fff7e8 0%, #f3e1af 100%); padding: 10px;
+    }
+    
+    .service-card .carousel-container { height: 140px; }
+    .service-card .carousel-img { object-fit: cover; object-position: 50% 30%; height: 140px; border-radius: 8px; padding: 0; }
+    .carousel-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(201, 168, 76, 0.2); color: var(--gold);
+      border: 1.5px solid rgba(201, 168, 76, 0.5);
+      padding: 10px 16px; font-size: 0.9rem; cursor: pointer;
+      border-radius: 4px; transition: all 0.3s ease;
+      backdrop-filter: blur(6px); font-family: 'DM Sans', sans-serif; font-weight: 500; z-index: 10;
+    }
+    .carousel-btn:hover { background: rgba(201, 168, 76, 0.4); border-color: var(--gold); }
+    .carousel-prev { left: 12px; }
+    .carousel-next { right: 12px; }
+    .carousel-counter { position: absolute; bottom: 12px; right: 12px; background: rgba(255,255,255,0.8); color: var(--gold-dim); backdrop-filter: blur(4px); }
+
+    @media (max-width: 768px) {
+      .carousel-container { height: 220px; }
+      .carousel-btn { padding: 8px 12px; font-size: 0.8rem; }
+      .carousel-prev { left: 8px; }
+      .carousel-next { right: 8px; }
+    }
+    @media (max-width: 480px) {
+      .carousel-container { height: 180px; }
+      .carousel-btn { padding: 6px 10px; font-size: 0.75rem; }
+      .carousel-counter { font-size: 0.75rem; padding: 4px 8px; }
+    }
+    
+    .carousel-zoom-modal {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.98); z-index: 2000;
+      display: flex; align-items: center; justify-content: center;
+      animation: zoomFadeIn 0.3s ease; backdrop-filter: blur(4px);
+    }
+    @keyframes zoomFadeIn { from{opacity:0;} to{opacity:1;} }
+    .carousel-zoom-content { position: relative; width: 90vw; max-width: 900px; height: 80vh; max-height: 600px; display: flex; align-items: center; justify-content: center; }
+    .carousel-zoom-img { width: 100%; height: 100%; object-fit: contain; border-radius: 8px; animation: zoomImageIn 0.4s ease; }
+    @keyframes zoomImageIn { from{transform:scale(0.9);opacity:0;} to{transform:scale(1);opacity:1;} }
+    .carousel-zoom-close {
+      position: absolute; top: -40px; right: 0;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); color: var(--gold);
+      width: 36px; height: 36px; border-radius: 50%; font-size: 24px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; transition: all 0.3s; z-index: 2001;
+    }
+    .carousel-zoom-close:hover { background: rgba(201,168,76,0.2); border-color: var(--gold); transform: scale(1.1); }
+    .carousel-zoom-prev, .carousel-zoom-next {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.6); border: 1px solid rgba(201,168,76,0.3); color: var(--gold);
+      width: 48px; height: 48px; border-radius: 50%; font-size: 24px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; transition: all 0.3s; z-index: 2001;
+    }
+    .carousel-zoom-prev { left: -60px; }
+    .carousel-zoom-next { right: -60px; }
+    .carousel-zoom-prev:hover, .carousel-zoom-next:hover { background: rgba(201,168,76,0.2); border-color: var(--gold); transform: translateY(-50%) scale(1.15); }
+    .carousel-zoom-counter {
+      position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%);
+      color: var(--gold); font-size: 14px; font-family: 'Courier New', monospace; letter-spacing: 0.1em;
+      background: rgba(0,0,0,0.6); padding: 6px 12px; border-radius: 4px; border: 1px solid rgba(201,168,76,0.3);
+    }
+    @media (max-width: 768px) {
+      .carousel-zoom-content { width: 95vw; height: 70vh; }
+      .carousel-zoom-prev, .carousel-zoom-next { width: 44px; height: 44px; font-size: 20px; }
+      .carousel-zoom-prev { left: 10px; }
+      .carousel-zoom-next { right: 10px; }
+      .carousel-zoom-close { top: 10px; right: 10px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- MOBILE OVERLAY + DRAWER -->
+  
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
     <ul>
       <li>
@@ -240,7 +342,7 @@
     </ul>
   </div>
 
-  <!-- NAVIGATION -->
+  
   <nav id="navbar">
     <a href="media-services-website.html" class="logo">
       <img src="images/idalia_logo_cropped.png" alt="Idalia Studio and Events Ltd logo">
@@ -267,19 +369,37 @@
   <div class="page">
     <div class="section-hero">
       <div class="section-hero-content">
-        <span class="eyebrow">What We Do</span>
-        <h1>From concept to masterpiece</h1>
-        <p>Professional photography, videography, event planning, and technical support for every occasion.</p>
+        <div class="scroll-indicator" aria-label="Scroll to explore services">
+          <span class="mouse"></span>
+          <span>Scroll</span>
+        </div>
       </div>
     </div>
     <div class="top"><a href="media-services-website.html">← Back to home</a><span class="eyebrow">What We Do</span></div>
 
     <div class="section-block card">
       <p class="eyebrow">Our Services</p>
-      <h1>Everything you need for a flawless event</h1>
       <div class="services-grid">
         <div class="service-card">
-          <img src="images/photography image.jpg" alt="Photography">
+          <div id="combinedGallery" class="gallery-carousel">
+            <div class="carousel-wrapper">
+              <div class="carousel-container">
+                <img src="images/portofolio/1.jpeg" alt="Event coverage" class="carousel-img">
+                <img src="images/portofolio/2.jpeg" alt="Event coverage" class="carousel-img">
+                <img src="images/portofolio/5.png" alt="Event coverage" class="carousel-img">
+                <img src="images/portofolio/4.png" alt="Event coverage" class="carousel-img">
+                <img src="images/portofolio/a.jpeg" alt="Studio production" class="carousel-img">
+                <img src="images/portofolio/b.jpeg" alt="Studio production" class="carousel-img">
+                <img src="images/portofolio/c.jpeg" alt="Studio production" class="carousel-img">
+                <img src="images/portofolio/d.jpeg" alt="Studio production" class="carousel-img">
+                <img src="images/portofolio/e.jpeg" alt="Studio production" class="carousel-img">
+                <button class="carousel-btn carousel-prev" type="button" aria-label="Previous">❮</button>
+                <button class="carousel-btn carousel-next" type="button" aria-label="Next">❯</button>
+                <div class="carousel-counter"><span class="counter-current">1</span> / <span class="counter-total">9</span></div>
+                <div class="carousel-autoplay-indicator"><div class="carousel-autoplay-progress"></div></div>
+              </div>
+            </div>
+          </div>
           <h3>Photography</h3>
           <p>Weddings, graduations, corporate events, and portrait sessions captured with artistry and attention to detail.</p>
         </div>
@@ -289,34 +409,40 @@
           <p>Cinematic event films, brand content, and documentary-style coverage for every platform.</p>
         </div>
         <div class="service-card">
-          <img src="images/events planning.png" alt="Event Planning and Management">
-          <h3>Event Planning and Management</h3>
-          <p>End-to-end coordination for conferences, weddings, fundraisers, and corporate functions.</p>
+          <img src="images/events planning.jpeg" alt="Event Planning and Management">
+          <h3>Event Planning &amp; Management</h3>
+          <p>Concept creation, timeline design, and full on-site coordination.</p>
         </div>
         <div class="service-card">
           <img src="images/outdoor catering.jpg" alt="Outdoor Catering">
-          <h3>Outdoor Catering</h3>
-          <p>Elevated culinary experiences for outdoor events, receptions, and celebrations. Fresh, elegant cuisine curated to complement your occasion.</p>
+          <h3>Catering Services</h3>
+          <p>On-site food and beverage coordination.</p>
         </div>
         <div class="service-card">
           <img src="images/decor and techinical support.jpg" alt="Decor and Technical Support">
-          <h3>Decor & Technical Support</h3>
-          <p>Stage design, lighting, sound, and full technical production for events of any scale.</p>
+          <h3>Décor &amp; Styling</h3>
+          <p>Custom thematic design, floral arrangements, and lighting setups.</p>
         </div>
         <div class="service-card">
-          <img src="images/audio for hire.png" alt="Sound Systems Hire">
-          <h3>Sound Systems Hire</h3>
-          <p>Professional sound systems, microphones, and audio engineering for live events.</p>
+          <img src="images/audio for hire.jpeg" alt="Sound Systems Hire">
+          <h3>Entertainment &amp; Audio-Visual</h3>
+          <p>Professional DJ sourcing, MCs, and sound/rigging gear</p>
         </div>
+      </div>
+    </div>
+
+    <div class="section-block card">
+      <p class="eyebrow">Podcasts & Documentaries</p>
+      <h2>Featured Stories and Audio-Visual Works</h2>
+      <p>Explore our latest podcast episodes and documentaries directly on this page.</p>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/hJvLj4EMWKw" title="Idalia Studio Podcast and Documentary Showcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <a class="btn" href="contact.html">Book a Service</a>
     </div>
   </div>
 
   <footer>
-    <div class="footer-logo"><a href="media-services-website.html" class="logo">
-      <img src="images/idalia_logo_cropped.png" alt="Idalia Studio and Events Ltd logo">
-    </a></div>
     <p class="footer-copy">© 2026 Idalia Studio And Events Ltd. All rights reserved. Nairobi, Kenya.</p>
     <div class="footer-social">
       <a href="https://www.instagram.com/idaliastudio_events/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -335,13 +461,13 @@
   </footer>
 
   <script>
-    // ── NAVBAR SCROLL ──
+
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // ── DESKTOP DROPDOWN (click-only, no hover) ──
+
     const desktopDropdown = document.getElementById('desktopDropdown');
     const desktopToggle = desktopDropdown.querySelector('.dropdown-toggle');
     const desktopDropdownLinks = desktopDropdown.querySelectorAll('.dropdown-menu a');
@@ -356,7 +482,7 @@
     });
     desktopDropdownLinks.forEach(link => link.addEventListener('click', () => desktopDropdown.classList.remove('open')));
 
-    // ── MOBILE HAMBURGER + DRAWER ──
+
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const whoToggle = document.getElementById('whoWeAreToggle');
@@ -386,7 +512,7 @@
       });
     }
 
-    // ── MOBILE "WHO WE ARE" SUB-DROPDOWN (click-only) ──
+
     if (whoToggle && whoSub) {
       whoToggle.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -394,6 +520,102 @@
         whoToggle.classList.toggle('open', open);
       });
     }
+
+
+    const carouselState = {};
+    function initCarousel(galleryId) {
+      if (!carouselState[galleryId]) {
+        const gallery = document.getElementById(galleryId);
+        if (!gallery) return;
+        const images = gallery.querySelectorAll('.carousel-img');
+        const counterTotal = gallery.querySelector('.counter-total');
+        if (counterTotal) counterTotal.textContent = images.length;
+        carouselState[galleryId] = { currentIndex: 0, autoplayInterval: null, isHovered: false, totalImages: images.length };
+        setupCarouselAutoplay(galleryId);
+      }
+    }
+    function setupCarouselAutoplay(galleryId) {
+      const gallery = document.getElementById(galleryId);
+      const wrapper = gallery.querySelector('.carousel-wrapper');
+      const state = carouselState[galleryId];
+      const images = gallery.querySelectorAll('.carousel-img');
+      images.forEach((img, idx) => { img.style.display = idx === 0 ? 'block' : 'none'; });
+      startAutoplay(galleryId);
+      wrapper.addEventListener('mouseenter', () => { state.isHovered = true; if (state.autoplayInterval) clearInterval(state.autoplayInterval); });
+      wrapper.addEventListener('mouseleave', () => { state.isHovered = false; startAutoplay(galleryId); });
+      let touchStartX = 0;
+      wrapper.addEventListener('touchstart', (e) => { state.isHovered = true; touchStartX = e.touches[0].clientX; if (state.autoplayInterval) clearInterval(state.autoplayInterval); });
+      wrapper.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) changeCarousel(galleryId, diff > 0 ? 1 : -1);
+        setTimeout(() => { state.isHovered = false; startAutoplay(galleryId); }, 300);
+      });
+      wrapper.addEventListener('click', (e) => { if (e.target.classList.contains('carousel-img')) openCarouselZoom(galleryId); });
+      const prevBtn = gallery.querySelector('.carousel-prev');
+      const nextBtn = gallery.querySelector('.carousel-next');
+      if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); changeCarousel(galleryId, -1); });
+      if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); changeCarousel(galleryId, 1); });
+    }
+    function startAutoplay(galleryId) {
+      const state = carouselState[galleryId];
+      if (state.autoplayInterval) clearInterval(state.autoplayInterval);
+      if (!state.isHovered) {
+        const gallery = document.getElementById(galleryId);
+        const progressBar = gallery.querySelector('.carousel-autoplay-progress');
+        if (progressBar) { progressBar.style.animation = 'none'; setTimeout(() => { progressBar.style.animation = 'autoplayProgress 4s linear forwards'; }, 10); }
+        state.autoplayInterval = setInterval(() => { changeCarousel(galleryId, 1); }, 4000);
+      }
+    }
+    function changeCarousel(galleryId, direction) {
+      const gallery = document.getElementById(galleryId);
+      const images = gallery.querySelectorAll('.carousel-img');
+      const counter = gallery.querySelector('.counter-current');
+      const state = carouselState[galleryId];
+      let nextIndex = state.currentIndex + direction;
+      if (nextIndex < 0) nextIndex = images.length - 1;
+      if (nextIndex >= images.length) nextIndex = 0;
+      images[state.currentIndex].style.display = 'none';
+      images[nextIndex].style.display = 'block';
+      state.currentIndex = nextIndex;
+      if (counter) counter.textContent = nextIndex + 1;
+      const progressBar = gallery.querySelector('.carousel-autoplay-progress');
+      if (progressBar) { progressBar.style.animation = 'none'; setTimeout(() => { progressBar.style.animation = 'autoplayProgress 4s linear forwards'; }, 10); }
+      startAutoplay(galleryId);
+    }
+    function openCarouselZoom(galleryId) {
+      const gallery = document.getElementById(galleryId);
+      const images = gallery.querySelectorAll('.carousel-img');
+      const state = carouselState[galleryId];
+      const src = images[state.currentIndex].src;
+      if (!src || src === '') return;
+      const zoomModal = document.createElement('div');
+      zoomModal.className = 'carousel-zoom-modal';
+      zoomModal.innerHTML = `<div class="carousel-zoom-content"><button class="carousel-zoom-close" aria-label="Close zoom">✕</button><img src="${src}" alt="Zoomed image" class="carousel-zoom-img"><div class="carousel-zoom-counter">${state.currentIndex + 1} / ${images.length}</div><button class="carousel-zoom-prev" aria-label="Previous image">❮</button><button class="carousel-zoom-next" aria-label="Next image">❯</button></div>`;
+      document.body.appendChild(zoomModal);
+      document.body.style.overflow = 'hidden';
+      const closeBtn = zoomModal.querySelector('.carousel-zoom-close');
+      const prevBtn = zoomModal.querySelector('.carousel-zoom-prev');
+      const nextBtn = zoomModal.querySelector('.carousel-zoom-next');
+      const zoomImg = zoomModal.querySelector('.carousel-zoom-img');
+      const zoomCounter = zoomModal.querySelector('.carousel-zoom-counter');
+      function closeZoom() { zoomModal.remove(); document.body.style.overflow = ''; }
+      function updateZoomImage() { const imgSrc = images[state.currentIndex].src; if (imgSrc) { zoomImg.src = imgSrc; zoomCounter.textContent = `${state.currentIndex + 1} / ${images.length}`; } }
+      closeBtn.addEventListener('click', closeZoom);
+      zoomModal.addEventListener('click', e => { if (e.target === zoomModal) closeZoom(); });
+      prevBtn.addEventListener('click', () => { state.currentIndex--; if (state.currentIndex < 0) state.currentIndex = images.length - 1; updateZoomImage(); });
+      nextBtn.addEventListener('click', () => { state.currentIndex++; if (state.currentIndex >= images.length) state.currentIndex = 0; updateZoomImage(); });
+      document.addEventListener('keydown', function handleKey(e) {
+        if (!document.body.contains(zoomModal)) { document.removeEventListener('keydown', handleKey); return; }
+        if (e.key === 'Escape') closeZoom();
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initCarousel('combinedGallery');
+    });
   </script>
 </body>
 </html>
