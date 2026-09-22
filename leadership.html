@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leadership | Idalia Studio and Events Ltd.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
-    :root { --cream:#f7efe4; --cream-2:#fcf6eb; --cream-3:#f3e4c8; --burgundy:#6f2434; --burgundy-deep:#4a1928; --gold:#c79a2d; --gold-soft:#f2d68f; --gold-dark:#8e6b1e; --text:#3d2a22; --dark:#1c1512; --muted:#735b46; --light:#fffdfa; --white:#ffffff; --deep-navy:#0f2344; --accent:var(--burgundy); --gold-light:var(--gold-soft); --gold-dim:var(--gold-dark); }
+    :root { --cream:#f8f2ea; --cream-2:#fffaf4; --cream-3:#efd9a3; --burgundy:#4e3d2d; --burgundy-deep:#352b24; --gold:#d9a94c; --gold-soft:#f1d48a; --gold-dark:#b6822c; --text:#2f2a26; --dark:#1d1a17; --muted:#5b4d41; --light:#fffdfb; --white:#ffffff; --deep-navy:#615f1c; --accent:#8b6a43; --gold-light:#f1d48a; --gold-dim:#b6822c; }
     *{box-sizing:border-box;margin:0;padding:0;} body{font-family:'DM Sans',sans-serif;min-height:100vh;background-color:var(--cream-2);background-image:linear-gradient(180deg,var(--cream) 0%,var(--cream-2) 100%);color:var(--text);line-height:1.8;overflow-x:hidden;overscroll-behavior-x:none;} a{text-decoration:none;color:inherit;} .page{max-width:100%;margin:0 auto;padding:0 0 5rem;background:transparent;overflow-x:hidden;} .page > .card,.page > .top,.page > p,.page > .news-list{max-width:1000px;width:min(100%,1000px);margin-left:auto;margin-right:auto;padding-left:1.5rem;padding-right:1.5rem;} .eyebrow{color:var(--burgundy);text-transform:uppercase;letter-spacing:.25em;font-size:.75rem;font-weight:600;margin-bottom:1rem;} h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3rem);font-weight:600;margin-bottom:1rem;color:var(--burgundy);} p{color:var(--muted);font-size:1rem;margin-bottom:1rem;}
     
     .section-hero{position:relative;min-height:50vh;border-radius:0;overflow:hidden;margin:0 0 2rem;display:flex;align-items:center;justify-content:flex-start;padding:7rem 1.5rem 2rem;}
@@ -14,7 +14,7 @@
 
     
     nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.9rem 4rem;min-height:70px;display:flex;align-items:center;justify-content:space-between;background:var(--deep-navy);transition:background 0.4s ease,padding 0.4s ease;}
-    nav.scrolled{background:rgba(15,35,68,0.96);backdrop-filter:blur(12px);padding:0.9rem 4rem;min-height:70px;border-bottom:1px solid rgba(242,214,143,0.25);box-shadow:0 8px 30px rgba(20,20,20,0.16);}
+    nav.scrolled{background:rgba(119,117,42,0.96);backdrop-filter:blur(12px);padding:0.9rem 4rem;min-height:70px;border-bottom:1px solid rgba(242,214,143,0.25);box-shadow:0 8px 30px rgba(20,20,20,0.16);}
     .logo{display:inline-flex;align-items:center;cursor:pointer;transition:transform 0.3s ease,filter 0.3s ease;}
     .logo:hover{transform:translateY(-2px);}
     .logo img{height:50px;width:auto;display:block;transition:transform 0.3s ease,filter 0.3s ease;}
@@ -43,7 +43,7 @@
     .hamburger.active span{background:var(--gold-soft);}
 
     
-    .mobile-menu{display:none;position:fixed;top:70px;left:0.75rem;right:auto;width:min(240px,calc(100vw - 1.5rem));max-width:calc(100vw - 1.5rem);background:rgba(15,35,68,0.97);backdrop-filter:blur(14px);z-index:999;padding:0.75rem 1rem 0.9rem;border:1px solid rgba(242,214,143,0.18);border-radius:10px;box-shadow:0 12px 32px rgba(10,10,20,0.28);transform:translateY(-6px) scale(0.97);opacity:0;pointer-events:none;transition:transform 0.22s ease,opacity 0.22s ease;overflow:hidden;}
+    .mobile-menu{display:none;position:fixed;top:70px;left:0.75rem;right:auto;width:min(240px,calc(100vw - 1.5rem));max-width:calc(100vw - 1.5rem);background:rgba(119,117,42,0.97);backdrop-filter:blur(14px);z-index:999;padding:0.75rem 1rem 0.9rem;border:1px solid rgba(242,214,143,0.18);border-radius:10px;box-shadow:0 12px 32px rgba(10,10,20,0.28);transform:translateY(-6px) scale(0.97);opacity:0;pointer-events:none;transition:transform 0.22s ease,opacity 0.22s ease;overflow:hidden;}
     .mobile-menu.open{transform:translateY(0) scale(1);opacity:1;pointer-events:auto;}
     .mobile-menu ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0;}
     .mobile-menu ul li a{display:block;padding:0.45rem 0;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--cream-2);font-weight:600;text-decoration:none;transition:color 0.2s;}
@@ -102,6 +102,9 @@
       .btn.secondary { padding: 0.6rem 0.9rem; font-size: 0.75rem; }
     }
   </style>
+<style id="shared-shell">nav{min-height:70px!important;padding:.9rem 4rem!important;font-family:'DM Sans',sans-serif!important;}nav.scrolled{background:#615f1c!important;padding:.9rem 4rem!important;}nav .nav-links a,nav .dropdown-menu a,nav .hamburger,.mobile-menu,.mobile-menu a{font-family:'DM Sans',sans-serif!important;}footer{background:#615f1c!important;padding:1rem 1.25rem!important;padding-right:1.25rem!important;border-top:1px solid rgba(255,255,255,.2)!important;font-family:'DM Sans',sans-serif!important;}.footer-copy{font-size:.75rem!important;}.footer-social{display:flex!important;gap:1rem!important;flex-wrap:wrap!important;justify-content:center!important;}.footer-social a{width:36px!important;height:36px!important;}.footer-social a svg,.footer-social svg{width:16px!important;height:16px!important;}@media(max-width:1100px){nav,nav.scrolled{padding:1rem 2rem!important;}}@media(max-width:900px){nav{padding:1.2rem 1.5rem!important;}nav.scrolled{padding:.8rem 1.5rem!important;}footer{padding:2rem 1.25rem!important;flex-wrap:wrap;justify-content:center;text-align:center;gap:1.5rem!important;}}@media(max-width:480px){nav,nav.scrolled{padding:.9rem 1rem!important;}.logo img{height:40px!important;}}</style>
+<style id="mobile-shell-fix">@media(max-width:900px){.mobile-menu{display:block!important;}}</style>
+<style id="dropdown-shell-fix">.nav-dropdown:hover .dropdown-menu{opacity:0!important;pointer-events:none!important;}.nav-dropdown.open .dropdown-menu{opacity:1!important;pointer-events:auto!important;}</style>
 </head>
 <body>
   <nav id="navbar">
@@ -116,11 +119,12 @@
           <a href="vision.html">Our Vision</a>
           <a href="values.html">Our Values</a>
           <a href="leadership.html">Leadership</a>
-          <a href="contact.html">Contact Us</a>
+          <a href="contact.html">Get in Touch</a>
         </div>
       </li>
       <li><a href="services.html">What We Do</a></li>
       <li><a href="news.html">News and Updates</a></li>
+      <li><a href="work-with-us.html">Work With Us</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -137,11 +141,12 @@
           <li><a href="vision.html">Our Vision</a></li>
           <li><a href="values.html">Our Values</a></li>
           <li><a href="leadership.html">Leadership</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html">Get in Touch</a></li>
         </ul>
       </li>
       <li><a href="services.html">What We Do</a></li>
       <li><a href="news.html">News and Updates</a></li>
+      <li><a href="work-with-us.html">Work With Us</a></li>
     </ul>
   </div>
   <div class="page">

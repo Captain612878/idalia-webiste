@@ -6,29 +6,29 @@
 <title>Idalia Studio And Events Ltd - Premium media services Nirobi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #f7efe4;
-    --cream-2: #fcf6eb;
-    --cream-3: #f3e4c8;
-    --burgundy: #6f2434;
-    --burgundy-deep: #4a1928;
-    --gold: #c79a2d;
-    --gold-soft: #f2d68f;
-    --gold-dark: #8e6b1e;
-    --text: #3d2a22;
-    --dark: #1c1512;
-    --muted: #735b46;
-    --light: #fffdfa;
+    --cream: #f8f2ea;
+    --cream-2: #fffaf4;
+    --cream-3: #efd9a3;
+    --burgundy: #4e3d2d;
+    --burgundy-deep: #352b24;
+    --gold: #d9a94c;
+    --gold-soft: #f1d48a;
+    --gold-dark: #b6822c;
+    --text: #2f2a26;
+    --dark: #1d1a17;
+    --muted: #5b4d41;
+    --light: #fffdfb;
     --white: #ffffff;
-    --deep-navy: #0f2344;
+    --deep-navy: #615f1c;
     --wa-green: #25D366;
-    --brand: var(--burgundy);
-    --brand-soft: #9d6270;
-    --accent: var(--burgundy);
-    --gold-light: var(--gold-soft);
-    --gold-dim: var(--gold-dark);
+    --brand: #4e3d2d;
+    --brand-soft: #a98d62;
+    --accent: #8b6a43;
+    --gold-light: #f1d48a;
+    --gold-dim: #b6822c;
     --dark-2: var(--cream);
     --dark-3: var(--cream-2);
     --dark-4: var(--cream-3);
@@ -140,16 +140,16 @@
     padding: 0.9rem 4rem;
     min-height: 70px;
     display: flex; align-items: center; justify-content: space-between;
-    background: var(--deep-navy);
+    background: #615f1c;
     transition: background 0.4s ease, padding 0.4s ease;
     gap: 1rem;
   }
   nav.scrolled {
-    background: rgba(15, 35, 68, 0.96);
+    background: #615f1c;
     backdrop-filter: blur(12px);
     padding: 0.9rem 4rem;
     min-height: 70px;
-    border-bottom: 1px solid rgba(242, 214, 143, 0.25);
+    border-bottom: 1px solid rgba(248, 216, 110, 0.25);
     box-shadow: 0 8px 30px rgba(20,20,20,0.16);
   }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
@@ -194,7 +194,7 @@
     right: auto;
     width: min(240px, calc(100vw - 1.5rem));
     max-width: calc(100vw - 1.5rem);
-    background: rgba(15, 35, 68, 0.97);
+    background: rgba(119, 117, 42, 0.97);
     backdrop-filter: blur(14px);
     z-index: 999;
     padding: 0.75rem 1rem 0.9rem;
@@ -311,7 +311,7 @@
     background-color: #0f0f0f;
     background-image:
       radial-gradient(circle at center, rgba(7, 7, 7, 0.86) 0%, rgba(7, 7, 7, 0.6) 28%, rgba(7, 7, 7, 0.24) 62%, transparent 100%),
-      url("images/bg image 1.jpg");
+      url("images/bg image 1.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -720,16 +720,16 @@
   .wa-cta-btn svg { width: 22px; height: 22px; }
 
   
-  footer { background: var(--deep-navy); padding: 1rem 1.25rem; padding-right: 1.25rem; border-top: 1px solid rgba(242,214,143,0.2); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  footer { background: #615f1c; padding: 1rem 1.25rem; padding-right: 1.25rem; border-top: 1px solid rgba(255,255,255,0.2); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
   @media(max-width:900px){ footer { padding: 1rem 0.9rem; padding-right: 0.9rem; flex-wrap: wrap; justify-content: center; text-align: center; } }
-  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; letter-spacing: 0.2em; color: var(--cream); }
-  .footer-logo span { color: var(--gold-soft); }
-  .footer-copy { font-size: 0.75rem; color: rgba(247,239,228,0.8); line-height: 1.7; max-width: 420px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; letter-spacing: 0.2em; color: #ffffff; }
+  .footer-logo span { color: #F1B724; }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.8); line-height: 1.7; max-width: 420px; }
   .footer-social { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-  .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(247,239,228,0.35); display: flex; align-items: center; justify-content: center; transition: all 0.3s; text-decoration: none; }
-  .footer-social a:hover { border-color: var(--gold-soft); }
-  .footer-social a svg { width: 16px; height: 16px; stroke: var(--cream-2); fill: none; stroke-width: 1.5; transition: stroke 0.3s; }
-  .footer-social a:hover svg { stroke: var(--gold-soft); }
+  .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.35); display: flex; align-items: center; justify-content: center; transition: all 0.3s; text-decoration: none; }
+  .footer-social a:hover { border-color: #F1B724; }
+  .footer-social a svg { width: 16px; height: 16px; stroke: #ffffff; fill: none; stroke-width: 1.5; transition: stroke 0.3s; }
+  .footer-social a:hover svg { stroke: #F1B724; }
 
   
   @keyframes fadeUp { from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
@@ -819,6 +819,9 @@
   }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style id="shared-shell">nav{min-height:70px!important;padding:.9rem 4rem!important;font-family:'DM Sans',sans-serif!important;}nav.scrolled{background:#615f1c!important;padding:.9rem 4rem!important;}nav .nav-links a,nav .dropdown-menu a,nav .hamburger,.mobile-menu,.mobile-menu a{font-family:'DM Sans',sans-serif!important;}footer{background:#615f1c!important;padding:1rem 1.25rem!important;padding-right:1.25rem!important;border-top:1px solid rgba(255,255,255,.2)!important;font-family:'DM Sans',sans-serif!important;}.footer-copy{font-size:.75rem!important;}.footer-social{display:flex!important;gap:1rem!important;flex-wrap:wrap!important;justify-content:center!important;}.footer-social a{width:36px!important;height:36px!important;}.footer-social a svg,.footer-social svg{width:16px!important;height:16px!important;}@media(max-width:1100px){nav,nav.scrolled{padding:1rem 2rem!important;}}@media(max-width:900px){nav{padding:1.2rem 1.5rem!important;}nav.scrolled{padding:.8rem 1.5rem!important;}footer{padding:2rem 1.25rem!important;flex-wrap:wrap;justify-content:center;text-align:center;gap:1.5rem!important;}}@media(max-width:480px){nav,nav.scrolled{padding:.9rem 1rem!important;}.logo img{height:40px!important;}}</style>
+<style id="mobile-shell-fix">@media(max-width:900px){.mobile-menu{display:block!important;}}</style>
+<style id="dropdown-shell-fix">.nav-dropdown:hover .dropdown-menu{opacity:0!important;pointer-events:none!important;}.nav-dropdown.open .dropdown-menu{opacity:1!important;pointer-events:auto!important;}</style>
 </head>
 <body>
 
@@ -848,11 +851,12 @@
           <li><a href="vision.html">Our Vision</a></li>
           <li><a href="values.html">Our Values</a></li>
           <li><a href="leadership.html">Leadership</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html">Get in Touch</a></li>
         </ul>
       </li>
       <li><a href="services.html">What We Do</a></li>
       <li><a href="news.html">News and Updates</a></li>
+      <li><a href="work-with-us.html">Work With Us</a></li>
     </ul>
   </div>
 
@@ -869,11 +873,12 @@
         <a href="vision.html">Our Vision</a>
         <a href="values.html">Our Values</a>
         <a href="leadership.html">Leadership</a>
-        <a href="contact.html">Contact Us</a>
+        <a href="contact.html">Get in Touch</a>
       </div>
     </li>
     <li><a href="services.html">What We Do</a></li>
     <li><a href="news.html">News and Updates</a></li>
+    <li><a href="work-with-us.html">Work With Us</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
     <span></span><span></span><span></span>

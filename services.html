@@ -4,25 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What We Do | Idalia Studio and Events Ltd.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
-    :root { --cream:#f7efe4; --cream-2:#fcf6eb; --cream-3:#f3e4c8; --burgundy:#6f2434; --gold:#c79a2d; --gold-soft:#f2d68f; --gold-dark:#8e6b1e; --text:#3d2a22; --dark:#1c1512; --muted:#735b46; --light:#fffdfa; --white:#ffffff; --deep-navy:#0f2344; --accent:var(--burgundy); --gold-dim:var(--gold-dark); }
+    :root { --cream:#f8f2ea; --cream-2:#fffaf4; --cream-3:#efd9a3; --burgundy:#4e3d2d; --burgundy-deep:#352b24; --gold:#d9a94c; --gold-soft:#f1d48a; --gold-dark:#b6822c; --text:#2f2a26; --dark:#1d1a17; --muted:#5b4d41; --light:#fffdfb; --white:#ffffff; --deep-navy:#615f1c; --accent:#8b6a43; --gold-light:#f1d48a; --gold-dim:#b6822c; }
     *{box-sizing:border-box;margin:0;padding:0;} body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,var(--cream),var(--cream-2));color:var(--text);line-height:1.8;} a{text-decoration:none;color:inherit;}
     .page{max-width:100%;margin:0 auto;padding:0 0 3rem;}
     .page > .card,.page > .top,.page > .section-block{max-width:1000px;width:min(100%,1000px);margin-left:auto;margin-right:auto;padding-left:1.5rem;padding-right:1.5rem;}
     .eyebrow{color:var(--burgundy);text-transform:uppercase;letter-spacing:.25em;font-size:.75rem;font-weight:600;margin-bottom:1rem;}
     h1,h2{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--burgundy);} h1{font-size:clamp(2.2rem,4vw,3rem);margin-bottom:1rem;} h2{font-size:1.5rem;margin-bottom:.75rem;}
     p{color:var(--muted);font-size:1rem;margin-bottom:1rem;}
-    .section-hero{position:relative;min-height:100vh;border-radius:0;overflow:hidden;margin:0 0 2rem;display:flex;align-items:center;justify-content:flex-start;padding:7rem 1.5rem 3rem;}
-    .section-hero::before{content:'';position:absolute;inset:0;background:url('bg/what we do bg.jpeg') center/cover no-repeat;transform:scale(1.03);z-index:-2;}
-    .section-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,15,15,0.86) 0%,rgba(15,15,15,0.72) 38%,rgba(15,15,15,0.12) 100%);z-index:-1;}
-    .section-hero-content{position:relative;z-index:1;padding:clamp(1rem,4vw,3rem);max-width:760px;margin-left:0;margin-right:auto;width:min(100%,1000px);text-align:left;display:flex;align-items:flex-end;justify-content:flex-start;min-height:100%;}
-    .section-hero-content h1{color:var(--white);margin-bottom:.75rem;} .section-hero-content p{color:rgba(255,255,255,0.86);margin-bottom:0;} .section-hero-content .eyebrow{color:var(--gold-soft);} 
-    .scroll-indicator{display:flex;flex-direction:column;align-items:center;gap:.45rem;position:absolute;right:1.5rem;bottom:1.5rem;color:rgba(255,255,255,0.9);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;animation:floatDown 1.8s ease-in-out infinite;}
-    .scroll-indicator .mouse{width:26px;height:42px;border:1.5px solid rgba(255,255,255,0.7);border-radius:999px;position:relative;}
-    .scroll-indicator .mouse::before{content:'';position:absolute;top:8px;left:50%;transform:translateX(-50%);width:5px;height:10px;border-radius:999px;background:var(--gold-soft);animation:scrollDot 1.8s ease-in-out infinite;}
-    @keyframes floatDown{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
-    @keyframes scrollDot{0%{opacity:0;transform:translateX(-50%) translateY(0);}40%{opacity:1;}100%{opacity:0;transform:translateX(-50%) translateY(14px);}}
     .card{background:var(--cream-2);border:1px solid rgba(111,36,52,0.16);padding:2rem;border-radius:16px;box-shadow:0 18px 40px rgba(15,15,15,0.05);margin-bottom:1.5rem;}
     .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;gap:1rem;max-width:1000px;width:min(100%,1000px);margin-left:auto;margin-right:auto;padding:0 1.5rem;}
     .top a{color:var(--gold);font-weight:600;}
@@ -31,8 +21,8 @@
     .service-card{background:var(--white);border:1px solid rgba(111,36,52,0.12);border-radius:12px;padding:1.5rem;transition:border-color .3s;}
     .service-card:hover{border-color:rgba(199,154,45,0.35);}
     .service-card img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:1rem;}
-    .service-card h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;margin-bottom:.5rem;color:var(--burgundy);}
-    .service-card p{font-size:.9rem;margin:0;line-height:1.7;}
+    .service-card h3,.podcast-section h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;margin-bottom:.5rem;color:var(--burgundy);}
+    .service-card p,.podcast-section > p{font-size:.9rem;margin:0;line-height:1.7;}
     .video-embed{position:relative;width:100%;padding-top:56.25%;border-radius:16px;overflow:hidden;box-shadow:0 18px 40px rgba(15,15,15,0.08);border:1px solid rgba(111,36,52,0.12);background:#000;}
     .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
 
@@ -42,16 +32,16 @@
       padding: 0.9rem 4rem;
       min-height: 70px;
       display: flex; align-items: center; justify-content: space-between;
-      background: var(--deep-navy);
+      background: #615f1c;
       transition: background 0.4s ease, padding 0.4s ease;
       gap: 1rem;
     }
     nav.scrolled {
-      background: rgba(15, 35, 68, 0.96);
+      background: #615f1c;
       backdrop-filter: blur(12px);
       padding: 0.9rem 4rem;
       min-height: 70px;
-      border-bottom: 1px solid rgba(242, 214, 143, 0.25);
+      border-bottom: 1px solid rgba(248,216,110,0.25);
       box-shadow: 0 8px 30px rgba(20,20,20,0.16);
     }
     .logo {
@@ -137,7 +127,7 @@
       right: auto;
       width: min(240px, calc(100vw - 1.5rem));
       max-width: calc(100vw - 1.5rem);
-      background: rgba(15, 35, 68, 0.97);
+      background: rgba(119, 117, 42, 0.97);
       backdrop-filter: blur(14px);
       z-index: 999;
       padding: 0.75rem 1rem 0.9rem;
@@ -191,7 +181,7 @@
     }
     .mobile-cta:hover { background: var(--gold-soft); color: var(--deep-navy); }
 
-    footer { background: var(--deep-navy); padding: 1rem 1.25rem; padding-right: 1.25rem; border-top: 1px solid rgba(242,214,143,0.2); display: flex; justify-content: space-between; align-items: center; }
+    footer { background: #615f1c; padding: 1rem 1.25rem; padding-right: 1.25rem; border-top: 1px solid rgba(255,255,255,0.2); display: flex; justify-content: space-between; align-items: center; }
     .footer-logo img{height:50px;width:auto;display:block;} .footer-copy{font-size:.75rem;color:rgba(247,239,228,0.8);} .footer-social{display:flex;gap:1rem;}
     .footer-social a{width:36px;height:36px;border:1px solid rgba(247,239,228,0.35);display:flex;align-items:center;justify-content:center;transition:all .3s;}
     .footer-social a svg{width:16px;height:16px;stroke:var(--cream-2);fill:none;stroke-width:1.5;}
@@ -216,20 +206,6 @@
     @media (max-width:600px){
       .services-grid{grid-template-columns:1fr;}
       .top{flex-direction:column;align-items:flex-start;}
-      .section-hero{
-        min-height:58vh;
-        padding:5rem 1.25rem 1.75rem;
-        align-items:flex-end;
-      }
-      .section-hero::before{
-        background-position: center 12%;
-        background-size: cover;
-        transform: scale(1.03);
-      }
-      .section-hero-content{padding:1rem 0.5rem;}
-      .section-hero-content h1{font-size:clamp(1.6rem,6vw,2.2rem);}
-      .section-hero-content p{font-size:0.92rem;}
-      .scroll-indicator{display:none;}
     }
     @media (max-width: 480px) {
       nav { padding: 0.9rem 1rem; }
@@ -254,6 +230,7 @@
       background: linear-gradient(135deg, #fff7e8 0%, #f3e1af 100%); padding: 10px;
     }
     
+    .service-card .gallery-carousel { margin-bottom: 1rem; }
     .service-card .carousel-container { height: 140px; }
     .service-card .carousel-img { object-fit: cover; object-position: 50% 30%; height: 140px; border-radius: 8px; padding: 0; }
     .carousel-btn {
@@ -319,6 +296,9 @@
       .carousel-zoom-close { top: 10px; right: 10px; }
     }
   </style>
+<style id="shared-shell">nav{min-height:70px!important;padding:.9rem 4rem!important;font-family:'DM Sans',sans-serif!important;}nav.scrolled{background:#615f1c!important;padding:.9rem 4rem!important;}nav .nav-links a,nav .dropdown-menu a,nav .hamburger,.mobile-menu,.mobile-menu a{font-family:'DM Sans',sans-serif!important;}footer{background:#615f1c!important;padding:1rem 1.25rem!important;padding-right:1.25rem!important;border-top:1px solid rgba(255,255,255,.2)!important;font-family:'DM Sans',sans-serif!important;}.footer-copy{font-size:.75rem!important;}.footer-social{display:flex!important;gap:1rem!important;flex-wrap:wrap!important;justify-content:center!important;}.footer-social a{width:36px!important;height:36px!important;}.footer-social a svg,.footer-social svg{width:16px!important;height:16px!important;}@media(max-width:1100px){nav,nav.scrolled{padding:1rem 2rem!important;}}@media(max-width:900px){nav{padding:1.2rem 1.5rem!important;}nav.scrolled{padding:.8rem 1.5rem!important;}footer{padding:2rem 1.25rem!important;flex-wrap:wrap;justify-content:center;text-align:center;gap:1.5rem!important;}}@media(max-width:480px){nav,nav.scrolled{padding:.9rem 1rem!important;}.logo img{height:40px!important;}}</style>
+<style id="mobile-shell-fix">@media(max-width:900px){.mobile-menu{display:block!important;}}</style>
+<style id="dropdown-shell-fix">.nav-dropdown:hover .dropdown-menu{opacity:0!important;pointer-events:none!important;}.nav-dropdown.open .dropdown-menu{opacity:1!important;pointer-events:auto!important;}</style>
 </head>
 <body>
 
@@ -334,11 +314,12 @@
           <li><a href="vision.html">Our Vision</a></li>
           <li><a href="values.html">Our Values</a></li>
           <li><a href="leadership.html">Leadership</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html">Get in Touch</a></li>
         </ul>
       </li>
       <li><a href="services.html" class="active">What We Do</a></li>
       <li><a href="news.html">News and Updates</a></li>
+      <li><a href="work-with-us.html">Work With Us</a></li>
     </ul>
   </div>
 
@@ -355,11 +336,12 @@
           <a href="vision.html">Our Vision</a>
           <a href="values.html">Our Values</a>
           <a href="leadership.html">Leadership</a>
-          <a href="contact.html">Contact Us</a>
+          <a href="contact.html">Get in Touch</a>
         </div>
       </li>
       <li><a href="services.html" class="active">What We Do</a></li>
       <li><a href="news.html">News and Updates</a></li>
+      <li><a href="work-with-us.html">Work With Us</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -367,14 +349,6 @@
   </nav>
 
   <div class="page">
-    <div class="section-hero">
-      <div class="section-hero-content">
-        <div class="scroll-indicator" aria-label="Scroll to explore services">
-          <span class="mouse"></span>
-          <span>Scroll</span>
-        </div>
-      </div>
-    </div>
     <div class="top"><a href="media-services-website.html">← Back to home</a><span class="eyebrow">What We Do</span></div>
 
     <div class="section-block card">
@@ -431,14 +405,12 @@
       </div>
     </div>
 
-    <div class="section-block card">
-      <p class="eyebrow">Podcasts & Documentaries</p>
-      <h2>Featured Stories and Audio-Visual Works</h2>
+    <div class="section-block card podcast-section">
+      <h3>Podcasts &amp; Documentaries</h3>
       <p>Explore our latest podcast episodes and documentaries directly on this page.</p>
       <div class="video-embed">
         <iframe src="https://www.youtube.com/embed/hJvLj4EMWKw" title="Idalia Studio Podcast and Documentary Showcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <a class="btn" href="contact.html">Book a Service</a>
     </div>
   </div>
 
