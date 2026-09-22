@@ -84,6 +84,16 @@
 <style id="shared-shell">nav{min-height:70px!important;padding:.9rem 4rem!important;font-family:'DM Sans',sans-serif!important;}nav.scrolled{background:#615f1c!important;padding:.9rem 4rem!important;}nav .nav-links a,nav .dropdown-menu a,nav .hamburger,.mobile-menu,.mobile-menu a{font-family:'DM Sans',sans-serif!important;}footer{background:#615f1c!important;padding:1rem 1.25rem!important;padding-right:1.25rem!important;border-top:1px solid rgba(255,255,255,.2)!important;font-family:'DM Sans',sans-serif!important;}.footer-copy{font-size:.75rem!important;}.footer-social{display:flex!important;gap:1rem!important;flex-wrap:wrap!important;justify-content:center!important;}.footer-social a{width:36px!important;height:36px!important;}.footer-social a svg,.footer-social svg{width:16px!important;height:16px!important;}@media(max-width:1100px){nav,nav.scrolled{padding:1rem 2rem!important;}}@media(max-width:900px){nav{padding:1.2rem 1.5rem!important;}nav.scrolled{padding:.8rem 1.5rem!important;}footer{padding:2rem 1.25rem!important;flex-wrap:wrap;justify-content:center;text-align:center;gap:1.5rem!important;}}@media(max-width:480px){nav,nav.scrolled{padding:.9rem 1rem!important;}.logo img{height:40px!important;}}</style>
 <style id="mobile-shell-fix">@media(max-width:900px){.mobile-menu{display:block!important;}}</style>
 <style id="dropdown-shell-fix">.nav-dropdown:hover .dropdown-menu{opacity:0!important;pointer-events:none!important;}.nav-dropdown.open .dropdown-menu{opacity:1!important;pointer-events:auto!important;}</style>
+<style id="vision-redesign">
+  .section-hero{min-height:calc(100vh - 70px);align-items:center;justify-content:flex-end;padding:7rem clamp(1.5rem,7vw,7rem) 4rem;background-color:var(--burgundy-deep);}
+  .section-hero::before{transform:scale(1.01);z-index:0;}
+  .section-hero::after{background:linear-gradient(90deg,rgba(15,15,15,.64) 0%,rgba(15,15,15,.3) 48%,rgba(15,15,15,.08) 100%);z-index:1;}
+  .section-hero-content{z-index:2;max-width:600px;width:min(100%,600px);margin:0;padding:clamp(2rem,4vw,3.5rem);background:rgba(255,250,244,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:0;border-left:5px solid var(--gold);border-radius:0 18px 18px 0;box-shadow:0 24px 55px rgba(15,15,15,.2);}
+  .section-hero-content::before{content:'OUR PURPOSE';display:block;margin-bottom:1rem;color:var(--gold-dark);font-size:.7rem;font-weight:600;letter-spacing:.24em;}
+  .section-hero-content h1{color:var(--burgundy);font-size:clamp(2.8rem,5vw,4.8rem);line-height:.98;letter-spacing:.01em;margin-bottom:1.25rem;}
+  .section-hero-content p{max-width:46ch;color:var(--muted);font-size:clamp(1rem,1.5vw,1.12rem);line-height:1.8;}
+  @media(max-width:900px){.section-hero{min-height:calc(100vh - 70px);padding:6rem 1.25rem 2.5rem;align-items:flex-end;}.section-hero-content{width:100%;padding:2rem 1.5rem;border-left-width:4px;border-radius:0 14px 14px 0;}.section-hero-content h1{font-size:clamp(2.4rem,10vw,3.6rem);}.section-hero-content p{font-size:.95rem;line-height:1.7;}}
+</style>
 </head>
 <body>
   <nav id="navbar">
@@ -130,7 +140,7 @@
   <div class="page">
     <div class="section-hero">
       <div class="section-hero-content">
-        <p class="eyebrow">★ Our Vision</p>
+        <h1>Our Vision</h1>
         <p>To be a leading and trendsetting partner in the media and events industry, creating
 lasting, positive impressions globally.</p>
       </div>
